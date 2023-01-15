@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --light-pink:#FFFFE3;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Open sans';
+    color: black;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 750;
+    align-self: center;
+}
+
+.black_btn{
+    color: white;
+    background-color: black;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.flex-row > li{
+    margin: 0px 16px;
+
+}
+
+.flex-container{
+    margin: 30px 150px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+button{
+    border: 2px solid black;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+button:hover{
+    cursor: Pointer;
+    background-color: black;
+    color: white;
+}
+
+button:active{
+    color: aqua;
+}
+
+.signup_btn{
+    color: white;
+    background-color: black;
+}
+
+.signup_btn:hover{
+    background-color: teal;
+    border: 2px solid teal;
+}
+
+.intro_session{
+    height: fit-content;
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text_img_intro{
+    margin: 0 150px 0 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro_text h1{
+    margin-top: 36px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.intro_text p{
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.intro_text div{
+    margin-top: 30px;
+    padding: 2px;
+    border-radius: 10px;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+}
+
+.intro_text div button{
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 16px;
+}
+
+.search_selector a button:focus{
+    background-color: black;
+    color: white;
+}
+
+.search_role img{
+    margin: 0 12px 0 12px;
+}
+
+.search_role p{
+    font-size: 12.5px;
+    margin-right: 50px;
+
+    color: grey;
+}
+
+.intro_img{
+    width: 400px;
+    height: 400px;
+}
+
+.mentors_from{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 60px 0;
+}
+
+.mentors_from img{
+    margin: 32px 0;
+    height: 32px;
+    width: 100px;
+}
+
+.course_options{
+    padding: 30px 150px 10px 150px;
+    background-color: var(--light-pink);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.course_text{
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.course_text p{
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.expertise{
+    margin: 24px 55px 16px 55px;
+    display: flex;
+    flex-direction: row;            
+    flex-wrap:wrap;              
+    justify-content:center; 
+
+}
+
+.expertise div{
+    margin: 8px 13px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    background-color: black;
+}
+
+.expertise div h1{
+    margin: 0 20px;
+    font-size: 30px;
+    color: white;
+    align-self: center;
+}
+
+.expertise div img{
+    margin: 5px;
+    align-self: center;
+    height: 80px;
+    width: 80px;
+}
+
+.ourmentors{
+    margin: 60px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ourmentors h2{
+    font-size: 24px;
+}
+
+.mentor_fields{
+    margin: 25px 0 25px 4px;
+}
+
+.mentor_fields button{
+    margin: 5px;
+}
+
+.mentor_images{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentor_images img{
+    margin: 0 12px 30px 16px;
+    height: 391px;
+    width: 271px;
+    border-radius: 10px;
+}
+
+.how_it_works{
+    margin-top: 60px;
+}
+
+.mentorship_to_feedback{
+    margin-top: 24px;
+}
+
+.how_to_path{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 170px 0 170px;
+    margin-top: 30px;
+}
+
+.path_box{
+    margin: 0 12px 18px 12px;
+    background-color: black;
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.path_box h2{
+    color: #FFFFE3;
+}
+
+.path_box div div{
+    display: flex;
+    flex-direction: column;
+}
+
+.find_a_mentor{
+    width: 368px;
+}
+
+.pick_a_slot{
+    width: 276px;
+}
+
+.our_guidance_team{
+    width: 467px;
+}
+
+.get_mentorship{
+    width: 100%;
+}
