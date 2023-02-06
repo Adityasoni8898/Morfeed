@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Open sans';
+    color: black;
+}
+
+body{
+    padding: 30px 140px;
+}
+
+.mentor_options{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.mentor_select{
+    margin-right: 12px;
+}
+
