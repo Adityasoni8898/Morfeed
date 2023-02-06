@@ -3,6 +3,7 @@
 :root{
     --light-pink:#FFFFE3;
     --grey: #10100E;
+    --light_yellow: FFFFE3;
 }
 
 *{
@@ -15,8 +16,12 @@
     color: black;
 }
 
+body>div {
+    padding: 0px 140px;
+}
+
 .session_margin{
-    margin: px 140px 8px 140px;
+    margin: 12px 0px;
 }
 
 .title{
@@ -43,7 +48,7 @@
 }
 
 .flex-container{
-    margin: 30px 140px;
+    margin: 30px 0px;
     justify-content: space-between;
     display: flex;
     flex-direction: row;
@@ -87,7 +92,7 @@ button:active{
 }
 
 .text_img_intro{
-    margin: 0 140px 0 140px;
+
     display: flex;
     justify-content: space-between;
 }
@@ -155,7 +160,7 @@ button:active{
 }
 
 .course_options{
-    padding: 30px 150px 10px 150px;
+    padding: 30px 0px 10px 0px;
     background-color: var(--light-pink);
     width: 100%;
     display: flex;
@@ -197,7 +202,7 @@ button:active{
 
 .expertise div h1{
     margin: 0 20px;
-    font-size: 30px;
+    font-size: 28px;
     color: white;
     align-self: center;
 }
@@ -210,7 +215,7 @@ button:active{
 }
 
 .ourmentors{
-    margin: 50px 100px;
+    margin: 50px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -262,8 +267,8 @@ button:active{
 
 .path_box{
     margin: 0 8px 18px 8px;
-    background-color: black;
-    color: white;
+    background-color: #FFFFE3;
+    color: black;
     padding: 50px;
     border-radius: 10px;
 }
@@ -288,7 +293,7 @@ button:active{
 }
 
 .path_box div h2 {
-    color: #FFFFE3;
+    color: black;
     font-size: 22px;
 }
 
@@ -309,9 +314,10 @@ button:active{
 }
 
 .learn_from_mistake{
-    background-color: black;
+    background-color: var(--grey);
     color: white;
-    padding: 50px 280px;
+    padding-top: 50px;
+    padding-bottom: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,12 +325,12 @@ button:active{
 }
 
 .learn_from_mistake *{
-    margin-bottom: 10px;
+
     color:white;
 }
 
 .lfm_content{
-    margin: 60px 0 40px 0;
+    margin-top: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -349,7 +355,7 @@ button:active{
 }
 
 .impact_of_mentor{
-    padding: 50px 180px;
+    padding: 50px 0px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -375,7 +381,7 @@ button:active{
 
 .cassarol_text h2{
     font-size: 28px;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
 }
 
 .cassarol_text h3{
@@ -393,7 +399,7 @@ button:active{
 }
 
 .join_us{
-    width: 100%;
+    width: 85%;
     margin-top: 95px;
     background-color: var(--grey);
     color: white;
@@ -436,7 +442,7 @@ button:active{
 
 footer{
     background-color: var(--grey);
-    padding: 30px 140px 12px 140px;
+    padding: 30px 0px 12px 0px;
 }
 
 footer *{
