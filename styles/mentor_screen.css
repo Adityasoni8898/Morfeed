@@ -80,46 +80,18 @@ button:active{
     border: 2px solid teal;
 }
 
-
-.montor_and_feedback{
-    margin-top: 82px;
-}
-
-.mentors{
-    margin-top: 28px;
-}
-
-.mentor_options{
-    margin-top: 30px;
+.cofounder_detail{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.mentor_select{
-    margin-right: 12px;
     position: relative;
+    margin-top: 125px;
 }
 
-.mentor_select p {
+.cofounder_detail > div{
+    margin: 0 25px;
+}
+
+.wishlist_icon{
     position: absolute;
-    top: 8px;
-    right: 10px;
-}
-
-.mentor_name {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-}
-
-.mentor_name *{
-    color: white;
-}
-
-
-.load_btn{
-    align-self: center;
+    top : 0;
+    right: 0;
 }
