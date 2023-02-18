@@ -90,8 +90,27 @@ button:active{
     margin: 0 25px;
 }
 
+.cofounder_detail_name{
+    display: flex;
+    flex-direction: row;
+}
+
+.cofounder_detail_name h1{
+    font-size: 52px;
+}
+
+.cofounder_at h3{
+    font-size: 24px;
+    font-weight: 500;
+}
+
 .wishlist_icon{
     position: absolute;
     top : 0;
     right: 0;
+}
+
+.slot_overview_review_container{
+    display :flex;
+    
 }

@@ -355,7 +355,7 @@ button:active{
 }
 
 .impact_of_mentor{
-    padding: 50px 0px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,7 +368,7 @@ button:active{
 }
 
 .cassarol{
-    margin: 36px 100px 0 100px;
+    margin: 36px 48px 0 48px;
     margin-top: 36px;
     display: flex;
     border: solid black 1px;
@@ -399,7 +399,7 @@ button:active{
 }
 
 .join_us{
-    width: 85%;
+    width: 100%;
     margin-top: 95px;
     background-color: var(--grey);
     color: white;
@@ -452,4 +452,42 @@ footer > div {
 
 footer *{
     color: white;
+}
+
+.footer_upper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_upper_data h1{
+    font-size: 32px;
+}
+
+.footer_upper_data p{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.footer_lower{
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer_lower *{
+    margin-right: 16px;
+
+}
+
+.footer_lowest{
+    margin-top: 46px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_lowest *{
+    font-weight: 200;
+    font-size: 14px;
+    margin-right: 16px;
 }
