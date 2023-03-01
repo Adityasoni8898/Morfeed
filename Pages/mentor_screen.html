@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../styles/mentor_screen.css">
+        <script src="../scripts/mentor_screen.js"></script>
         <title>Document</title>
     </head>
     <body>
@@ -15,16 +16,16 @@
 
             <ul class="flex_row">
                 <li>
-                    <a href="#">Become a Mentor</a>
+                    <a href="../index.html">Become a Mentor</a>
                 </li>
                 <li>
                     <a href="find_a_mentor.html">Find a Mentor</a>
                 </li>
                 <li>
-                    <a href="#">Feedback</a>
+                    <a href="mentor_screen.html">Feedback</a>
                 </li>
                 <li>
-                    <a href="#">Community</a>
+                    <a href="recording_playback.html">Community</a>
                 </li>
             </ul>
 
@@ -76,7 +77,7 @@
                     src="../assets/svg/wishlist_icon.svg" alt=""></div>
         </div>
 
-        <div class="slot_overview_review_container">
+        <!-- <div class="slot_overview_review_container">
             <div class="overview_review_container">
                 <div>
                     <button>Overview</button>
@@ -84,16 +85,219 @@
                 </div>
                 <div>
                     Social Links
-                    <div>
+                    <div class="overview_container">
                         <a href=""><img src="" alt=""></a>
-                        <a href=""><img src="" alt=""></a></div>
+                        <a href=""><img src="" alt=""></a>
+                    </div>
+                    Experience Expertise <br>
+                    Morfeed
+                </div>
+                <div class="review_container">
+                    fdsfsdsd
+                    fsdfsdfs
                 </div>
 
             </div>
             <div class="slot_booking">
 
             </div>
-        </div>
+        </div> -->
+
+
+        <div class="container">
+            <div class="box1">
+        
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('overview')">
+                  Overview
+                </p>
+                <p class="tab-links" onclick="opentab('review')">Reviews</p>
+              </div>
+        
+              <div class="tab-contents active-tab" id="overview">
+        
+                <div class="tab-links">
+                  <p class="social-links">Social Links</p>
+                  <div class="social-img">
+                    <img src="../assets/Vector.png" alt="" />
+                  </div>
+                  <div class="social-img">
+                    <img src="../assets/Vector (1).png" alt="" />
+                  </div>
+                </div>
+        
+                <div class="tab-exp">
+                  <p>Experience <br /><button class="exp-btn">2+years</button></p>
+                  <p>Expertise <br /><button class="exp-btn">Design</button></p>
+                </div>
+        
+                <div class="tab-about">
+                  <h2 class="about-h2">Morfeed</h2>
+                  <p>CEO & Cofounder • 2020 - Present</p>
+        
+                  <h2 class="about-h2">Shiryam Technologies</h2>
+                  <p>Product Design Intern • 2020-2020</p>
+        
+                  <h3 class="about-h2">Craft Production Group</h3>
+                  <p>Product Designer • 2019-2020</p>
+                </div>
+        
+                <div class="portfolio">
+        
+                  <h2 class="portfolio-heading">Portfolio</h2>
+        
+                  <div class="portfolio-logo p1">
+                    <img src="../assets/pf log.svg" alt="" />
+                  </div>
+        
+                  <p class="portfolio-name p1">Sameer Hussain at Behance</p>
+        
+                  <div class="portfolio-images">
+        
+                    <div class="p2">
+                    <img src="../assets/Rectangle 88.svg" alt="">
+                    <p class="portfolio-h2">News Website Design</p>
+                    <p class="right-arrow">View on Behance <img src="../assets/Right Arrow.svg" alt=""></p>
+                  </div>
+        
+                  <div class="p2">
+                    <img src="../assets/Rectangle 89.svg" alt="">
+                    <p class="portfolio-h2">Food App Design</p>
+                    <p class="right-arrow">View on Behance <img src="../assets/Right Arrow.svg" alt=""></p>
+                  </div>
+        
+                  <div class="button">
+                  <button class="portfolio-button">view more<img src="../assets/button right arrow.svg" alt=""></p></button>
+                </div>  
+                </div>
+               </div>
+              </div>
+        
+              <div class="tab-contents" id="review">
+        
+                <h1 class="reviews">4.8 out of 5</h1>
+        
+                <div class="reviews-box">
+                <span class="span1">Aditya Soni</span> <br>
+                <span class="span2">Cofounder @ Morfeed</span>
+                <p class="review-p">Sameer is the fantastic mentor, bringing intelligence and drive to every session. Their unique blend of strategy, creativity, and passion for innoviation make for an invaluable mentorship experience, I am grateful to learn from such a visionary mentor. </p>
+              </div>
+        
+              <div class="reviews-box">
+                <span class="span1">Hetvi Merchant</span> <br>
+                <span class="span2">Content writer</span>
+                <p class="review-p">Mentorship With Sameer is a true asset. Their intelligence and entrepreneurial spirit shine in every session. Their strategic thinking, creative problem-solving, and passion for innoviation make for a invaluable experience. I am lucky to have such a visionary mentor</p>
+              </div>
+        
+              <div class="reviews-box">
+                <span class="span1">Shaikh Hisam</span> <br>
+                <span class="span2">Marketing Executive</span>
+                <p class="review-p">Mentorship with Sameer is a true asset. Their intelligence and entrepreneurial spirit shine in every session. Their strategic thinking, creative problem-solving, and passion for innovation make for a truly invaluable experience. I am lucky to have such a visionary mentor </p>
+              </div>
+        
+              </div>
+        
+            </div>
+
+            <!-- Calender -->
+        
+            <div class="box2">
+              <div class="mentor-stats-container">
+                <p class="slot-heading">Mentorship Stats</p>
+                <div class="stats">
+                    <div class="statItem">
+                        <div class="statIcon">
+                            <img src="../assets/clock.svg" alt="">
+                        </div>
+                        <div class="statTitle">Mentorship mins</div>
+                        <div class="statData">1258</div>
+                    </div>
+                    <div class="statItem">
+                        <div class="statIcon">
+                            <img src="../assets/laptop.svg" alt="">
+                        </div>
+                        <div class="statTitle">Sessions Completed</div>
+                        <div class="statData">58</div>
+                    </div>
+                </div>
+            </div>
+    
+    
+    
+            <div class="slots-container">
+                <div class="slotTitle">
+                    <p class="slot-heading">Available slots</p>
+                    <img src="../assets/calender.svg">
+                </div>
+    
+                <div class="calender">
+                    <div class="top">
+                        <p class="month">February</p>
+                        <p class="year">2023</p>
+                    </div>
+                    <div class="main">
+                        <div class="day">Mo</div>
+                        <div class="day">Tu</div>
+                        <div class="day">We</div>
+                        <div class="day">Th</div>
+                        <div class="day">Fr</div>
+                        <div class="day">Sa</div>
+                        <div class="day">Su</div>
+    
+                        <div class="date excl">31</div>
+                        <div class="date current">1 <span class="slots">3 slot</span></div>
+                        <div class="date">2</div>
+                        <div class="date">3</div>
+                        <div class="date">4</div>
+                        <div class="date">5 <span class="slots">1 slot</span></div>
+                        <div class="date">6</div>
+                        <div class="date">7</div>
+                        <div class="date">8</div>
+                        <div class="date">9</div>
+                        <div class="date">10</div>
+                        <div class="date">11</div>
+                        <div class="date">12 <span class="slots">1 slot</span></div>
+                        <div class="date">13</div>
+                        <div class="date">14</div>
+                        <div class="date">15</div>
+                        <div class="date">16</div>
+                        <div class="date">17</div>
+                        <div class="date">18</div>
+                        <div class="date">19</div>
+                        <div class="date">20</div>
+                        <div class="date">21</div>
+                        <div class="date">22</div>
+                        <div class="date">23</div>
+                        <div class="date">24</div>
+                        <div class="date">25</div>
+                        <div class="date">26</div>
+                        <div class="date">27</div>
+                        <div class="date">28</div>
+                        <div class="date">29</div>
+                        <div class="date">30</div>
+                    </div>
+                </div>
+    
+                <hr style="opacity: .2;">
+    
+                <div class="slotAvailble">
+                    <p class="slot-heading">Available time slots</p>
+    
+                    <div class="timeSlots">
+                        <div class="slot">1:30 PM</div>
+                        <div class="slot">4:30 PM</div>
+                        <div class="slot">4:30 PM</div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+            <button class="bookBtn">Book Now</button>
+    
+            </div>
+            
+          </div>
 
     </body>
 </html>
