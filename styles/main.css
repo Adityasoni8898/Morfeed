@@ -316,8 +316,7 @@ button:active{
 .learn_from_mistake{
     background-color: var(--grey);
     color: white;
-    padding-top: 50px;
-    padding-bottom: 90px;
+    padding: 50px 140px 90px 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,10 +338,18 @@ button:active{
 .lfm_text{
     margin-right: 30px;
     align-self: center;
+    max-width: 680px;
+    
+}
+
+.lfm_text h2{
+    max-width: 500px;
+    margin-bottom: 10px;
 }
 
 .lfm_text button{
     color: black;
+    margin-top: 30px;
 }
 
 .lfm_text button:hover{
@@ -409,6 +416,7 @@ button:active{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .join_us h2{
@@ -419,6 +427,49 @@ button:active{
 .join_us p{
     margin-top: 10px;
     color: white;
+        text-align: center;
+}
+.img1{
+    position: absolute;
+    left: 30px;
+    width: 80px;
+}
+.img2{
+    position: absolute;
+    left: 120px;
+    top: 220px;
+    width: 80px;
+}
+.img3{
+    position: absolute;
+    left: 220px;
+    top: 150px;
+    width: 50px;
+}
+.img4{
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 70px;
+}
+
+.img6{
+    position: absolute;
+    right: 210px;
+    top: 160px;
+    width: 70px;
+}
+.img7{
+    position: absolute;
+    right: 100px;
+    top: 220px;
+    width: 70px;
+}
+.img8{
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 70px;
 }
 
 .img_button{
