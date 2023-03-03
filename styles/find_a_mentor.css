@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --light-pink:#FFFFE3;
+    --grey: #10100E;
+    --light_yellow: FFFFE3;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Open sans';
+    color: black;
+}
+
+body>div {
+    margin: 0px 140px;
+}
+
+.black_btn{
+    color: white;
+    background-color: black;
+}
+
+button{
+    border: 2px solid black;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+button:hover{
+    cursor: Pointer;
+    background-color: black;
+    color: white;
+}
+
+button:active{
+    color: teal;
+}
+
+.flex_container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: 32px;
+    font-weight: 750;
+    align-self: center;
+}
+
+.flex_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.flex_row > li{
+    margin: 0px 16px;
+}
+
+.signup_btn{
+    color: white;
+    background-color: black;
+}
+
+.signup_btn:hover{
+    background-color: teal;
+    border: 2px solid teal;
+}
+
+
+.montor_and_feedback{
+    margin-top: 82px;
+}
+
+.mentors{
+    margin-top: 28px;
+}
+
+.mentor_options{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    justify-content: left;
+}
+
+.mentor_select{
+    
+    position: relative;
+}
+
+.mentor_select p {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+}
+
+.mentor_name {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+}
+
+.mentor_name *{
+    color: white;
+}
+
+.load_btn{
+    align-self: center;
+}
