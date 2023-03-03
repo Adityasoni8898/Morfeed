@@ -316,8 +316,7 @@ button:active{
 .learn_from_mistake{
     background-color: var(--grey);
     color: white;
-    padding-top: 50px;
-    padding-bottom: 90px;
+    padding: 50px 140px 90px 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -339,10 +338,18 @@ button:active{
 .lfm_text{
     margin-right: 30px;
     align-self: center;
+    max-width: 680px;
+    
+}
+
+.lfm_text h2{
+    max-width: 500px;
+    margin-bottom: 10px;
 }
 
 .lfm_text button{
     color: black;
+    margin-top: 30px;
 }
 
 .lfm_text button:hover{
