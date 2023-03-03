@@ -416,6 +416,7 @@ button:active{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .join_us h2{
@@ -426,6 +427,49 @@ button:active{
 .join_us p{
     margin-top: 10px;
     color: white;
+        text-align: center;
+}
+.img1{
+    position: absolute;
+    left: 30px;
+    width: 80px;
+}
+.img2{
+    position: absolute;
+    left: 120px;
+    top: 220px;
+    width: 80px;
+}
+.img3{
+    position: absolute;
+    left: 220px;
+    top: 150px;
+    width: 50px;
+}
+.img4{
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    width: 70px;
+}
+
+.img6{
+    position: absolute;
+    right: 210px;
+    top: 160px;
+    width: 70px;
+}
+.img7{
+    position: absolute;
+    right: 100px;
+    top: 220px;
+    width: 70px;
+}
+.img8{
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 70px;
 }
 
 .img_button{
