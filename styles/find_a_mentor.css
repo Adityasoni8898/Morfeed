@@ -151,20 +151,55 @@ button:active{
     position: relative;
 }
 
+.mentor_select img{
+    z-index: -1;
+}
+
 .mentor_select p {
     position: absolute;
     top: 8px;
     right: 10px;
 }
 
+.mentor_select .free{
+    background-color: #008000;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Open Sans';
+}
+
+.mentor_select .paid{
+    background-color: #FF0000;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Open Sans';
+}
+
 .mentor_name {
     position: absolute;
     bottom: 16px;
     left: 16px;
+    z-index: 2;
 }
 
 .mentor_name *{
     color: white;
+}
+
+.black_gradient{
+    position: absolute;
+    width: 271px;
+    height: 133px;
+    background: linear-gradient(359.71deg, #000000 0.24%, rgba(0, 0, 0, 0) 99.74%);
+    border-radius: 10px;
+    top: 258px;
+    z-index: 1;
 }
 
 .load_btn{
