@@ -85,6 +85,53 @@ button:active{
     margin-top: 82px;
 }
 
+.mentor_search{
+    display: flex;
+}
+
+.mentor_feedback_buttons button{
+    font-size: 34px;
+    font-weight: 700;
+    border: none;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: left;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.mentor_feedback_buttons button:hover{
+    color: rgb(0, 0, 0);
+    background: none;
+}
+
+.mentor_feedback_buttons .active{
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+.search_bar, .mentor_search select{
+    background: #10100E;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    margin-right: 14px;
+}
+
+.mentor_search select{
+    color: #FFFFE3;
+    width: fit-content;
+}
+
+.search_bar input{
+    font-size: 14px;
+    font-weight: 500;
+    width: 300px;
+    background: none;
+    border: none;
+    margin-left: 15px;
+}
+
 .mentors{
     margin-top: 28px;
 }
