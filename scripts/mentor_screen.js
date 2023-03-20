@@ -12,14 +12,12 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
-const timeSlotButtons = document.querySelectorAll('.timeSlots .slot');
+const dateLinks = document.getElementsByClassName("date");
 
-timeSlotButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    timeSlotButtons.forEach(button => {
-      button.classList.remove('selected');
-    });
-    
-    button.classList.add('selected');
-  });
-});
+function currentDate(date) {
+  for ( dateLink of dateLinks){
+    dateLink.classList.remove("current");
+  }
+  event.currentTarget.classList.add("current");
+  document.getElementById(date).classList.add("current");
+}
