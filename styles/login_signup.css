@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --light-pink:#FFFFE3;
+    --grey: #10100E;
+    --light_yellow: #FFFFE3;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Open sans';
+    color: white;
+    border: 0;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.login_singup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    width: 50%;
+    height: 100vh;
+    background-image: url('../assets/pngs/login_page_gradeients.png');
+}
+
+.login_welcome h2{
+    font-size: 48px;
+}
+
+.login_welcome h1{
+    font-size: 64px;
+}
+
+.login_signup_form{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.login_signup_toggle{
+    margin-top: 50px;
+    padding: 5px;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+.login_signup_toggle_btn{
+    border-radius: 5px;
+    width: 49%;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 8px 0;
+    background-color: transparent;
+}
+
+.selected{
+    color: black;
+    background-color: var(--light_yellow);
+}
+
+
+.signup_form{
+    display: none;
+}
+
+.form{
+    width: 100%;
+}
+
+.form p{
+    margin-top: 16px;
+    font-size: 20px;
+}
+
+.form input{
+    padding: 8px;
+    background-color: transparent;
+    text-decoration: underline;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 6px;
+    margin-top: 2px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.google_auth{
+    margin-top: 30px;
+}
+
+.about_morfeed{
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/pngs/login_about_us.png);
+}
+
+.about_morfeed>*{
+    width: 85%;
+}
+
+.about_morfeed h3{
+    font-size: 40px;
+}
+
+.about_morfeed h4{
+    margin-top: 10px;
+    font-size: 24px;
+
+}
+
+.about_morfeed a{
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.about_morfeed> p{
+    position: absolute;
+    bottom: 50px;
+}
