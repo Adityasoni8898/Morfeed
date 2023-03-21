@@ -428,6 +428,7 @@ button:active{
     color: black;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .day{
