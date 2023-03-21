@@ -74,6 +74,27 @@ button:active{
     color: teal;
 }
 
+
+.login_signup_btn{
+    border: 2px solid black;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.login_signup_btn:hover{
+    cursor: Pointer;
+    background-color: black;
+    color: white;
+}
+
+.login_signup_btn:active{
+    color: teal;
+}
+
 .signup_btn{
     color: white;
     background-color: black;
