@@ -17,14 +17,14 @@
   border: 0;
 }
 
-body {
-  position: relative;
+body{
+    position: relative;
 }
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .login_singup {
@@ -227,4 +227,77 @@ body {
   padding-left: 15px;
   border-radius: 0 0 10px 10px;
   cursor: pointer;
+}
+
+.registration_form{
+    position: absolute;
+    background-color:  #10100F;
+    width: 500px;
+    height: 675px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+}
+
+.registration_form .details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registration_form .heading{
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Satoshi';
+    font-size: 32px;
+    text-align: center;
+    line-height: 43px;
+    margin: 10px 0px;
+}
+
+.registration_form label{
+    color: #fff;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.registration_form input{
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.parameter{
+    margin: 10px 0px;
+}
+
+.bio{
+   margin-top: 10px;
+}
+
+.bio textarea{
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.register-btn{
+    background-color: #FFFFE3;
+    color: #000;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px;
+    margin: 20px 0px;
+    cursor: pointer;
 }

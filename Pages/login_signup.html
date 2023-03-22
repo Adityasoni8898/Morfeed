@@ -59,21 +59,58 @@
                     possible, until then enjoy Morfeed.</p>
             </div>
 
-            <!-- popup message  -->
+            <!-- popup message -->
             <div class="popup_message">
-            <div class="popup_container" id="popup_cards">
-                <div class="mentorPro">
-                  <div class="mentor_img"> <img src="../assets/svg/mentorprofile.svg" alt="">
-                  </div> 
-                    <button>Go to mentor profile </button>
+                <div class="popup_container" id="popup_cards">
+                    <div class="mentorPro">
+                      <div class="mentor_img"> <img src="../assets/svg/mentorprofile.svg" alt="">
+                      </div> 
+                        <button onclick="openRegisterForm()">Go to mentor profile </button>
+                    </div>
+                    <div class="menteePro">
+                       <div class="mentee_img"><img src="../assets/svg/Menteeprofile.svg" alt="">
+                       </div>
+                        <button onclick="openRegisterForm()">Go to mentee profile </button>
+                    </div>
                 </div>
-                <div class="menteePro">
-                   <div class="mentee_img"><img src="../assets/svg/Menteeprofile.svg" alt="">
-                   </div>
-                    <button>Go to mentee profile </button>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="registration_form">
+                <div class="heading">Registration form</div>
+                <div class="details">
+                    <form action="" method="post" id="registration_form">
+                    <div class="parameter">
+                        <label for="name">Full name</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="parameter">
+                        <label for="designation">Designation</label>
+                        <input type="text" id="designation">
+                    </div>
+                    <div class="parameter">
+                        <label for="experience">Experience</label>
+                        <input type="text" id="experience">
+                    </div>
+                    <div class="parameter">
+                        <label for="country">Country</label>
+                        <input type="text" id="country">
+                    </div>
+                    <div class="bio">
+                        <label for="bio">Your Bio</label>
+                        <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
+                    </div>
+                    <button class="register-btn" type="submit">Register</button>
+                  </form>
                 </div>
             </div>
         </div>
         </div>
+        <script>
+          document.getElementById("popup_cards").style.display = "none"
+          function openForm() {
+         document.getElementById("popup_cards").style.display = "block";
+            }
+        </script>
     </body>
 </html>
