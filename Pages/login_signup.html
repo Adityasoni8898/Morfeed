@@ -39,7 +39,7 @@
                             <input type="password">
                         </form>
                     </div>
-                    <img class="google_auth"
+                    <img class="google_auth" onclick="openForm()"
                         src="../assets/svg/google_login.svg" alt="">
                 </div>
             </div>
@@ -57,6 +57,28 @@
                     currently making sure to provide the best experience
                     possible, until then enjoy Morfeed.</p>
             </div>
+
+            <!-- popup message  -->
+            <div class="popup_message">
+            <div class="popup_container" id="popup_cards">
+                <div class="mentorPro">
+                  <div class="mentor_img"> <img src="../assets/svg/mentorprofile.svg" alt="">
+                  </div> 
+                    <button>Go to mentor profile </button>
+                </div>
+                <div class="menteePro">
+                   <div class="mentee_img"><img src="../assets/svg/Menteeprofile.svg" alt="">
+                   </div>
+                    <button>Go to mentee profile </button>
+                </div>
+            </div>
         </div>
+        </div>
+        <script>
+          document.getElementById("popup_cards").style.display = "none"
+          function openForm() {
+         document.getElementById("popup_cards").style.display = "block";
+            }
+        </script>
     </body>
 </html>
