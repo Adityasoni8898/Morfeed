@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign In</title>
         <link rel="stylesheet" href="../styles/login_signup.css">
+        <script src="../scripts/login_signup.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -16,10 +17,10 @@
                 </div>
                 <div class="login_signup_form">
                     <div class="login_signup_toggle">
-                        <button class="login_signup_toggle_btn selected">Log In</button>
-                        <button class="login_signup_toggle_btn">Sign up</button>
+                        <button id="login_toggle" class="login_signup_toggle_btn login_toggle">Log In</button>
+                        <button id="signup_toggle" class="login_signup_toggle_btn signup_toggle">Sign up</button>
                     </div>
-                    <div class="login_form form">
+                    <div class="login_form form" id="login_form">
                         <form action="">
                             <p>Email</p>
                             <input type="text">
@@ -27,7 +28,7 @@
                             <input type="password">
                         </form>
                     </div>
-                    <div class="signup_form form">
+                    <div class="signup_form form" id="signup_form">
                         <form action="">
                             <p>Full name</p>
                             <input type="text">

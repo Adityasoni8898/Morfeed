@@ -82,6 +82,9 @@ body{
 .signup_form {
   display: none;
 }
+.login_form {
+  display: block;
+}
 
 .form {
   width: 100%;
