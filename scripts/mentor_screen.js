@@ -12,12 +12,12 @@ function opentab(tabname) {
   document.getElementById(tabname).classList.add("active-tab");
 }
 
-const dateLinks = document.getElementsByClassName("date");
-
-function currentDate(date) {
-  for ( dateLink of dateLinks){
-    dateLink.classList.remove("current");
-  }
-  event.currentTarget.classList.add("current");
-  document.getElementById(date).classList.add("current");
+function currentDate() {
+  const currentLink = this
+  const activeDate = document.querySelector(".date.current")
+  activeDate.classList.remove("current")
+  currentLink.classList.add("current")
 }
+
+const dateLinks = document.getElementsByClassName("date");
+[...dateLinks].forEach(dateLink => dateLink.addEventListener("click", currentDate));
