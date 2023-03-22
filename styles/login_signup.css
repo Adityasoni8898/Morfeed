@@ -151,6 +151,7 @@ body{
 .popup_message {
   position: absolute;
   top: 20%;
+  z-index: 3;
 }
 .popup_container {
   width: 500px;
@@ -229,6 +230,7 @@ body{
   cursor: pointer;
 }
 
+
 .registration_form{
     position: absolute;
     background-color:  #10100F;
@@ -236,6 +238,7 @@ body{
     height: 675px;
     border: 1px solid #000000;
     border-radius: 15px;
+    z-index: 3;
 }
 
 .registration_form .details{
@@ -300,4 +303,15 @@ body{
     padding: 10px;
     margin: 20px 0px;
     cursor: pointer;
+}
+.overlay{
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: .9;
+  z-index: 2;
 }
