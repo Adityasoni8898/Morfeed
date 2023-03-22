@@ -19,3 +19,11 @@ signupToggle.addEventListener('click', () => {
   signupToggle.classList.add("selected");
   loginToggle.classList.remove("selected");
 });
+
+// --------------popup mess---------
+
+
+document.getElementById("popup_cards").style.display = "none"
+function openForm() {
+document.getElementById("popup_cards").style.display = "block";
+  }
