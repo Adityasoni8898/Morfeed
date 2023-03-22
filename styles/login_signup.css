@@ -229,12 +229,10 @@ body{
 .registration_form{
     position: absolute;
     background-color:  #10100F;
-    width: 520px;
+    width: 500px;
     height: 675px;
     border: 1px solid #000000;
     border-radius: 15px;
-    padding: 20px;
-    display: none;
 }
 
 .registration_form .details{
