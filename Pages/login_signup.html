@@ -7,6 +7,7 @@
         <title>Sign In</title>
         <link rel="stylesheet" href="../styles/login_signup.css">
         <script src="../scripts/login_signup.js" defer></script>
+        <script src="../scripts/login_signup_form.js"></script>
     </head>
     <body>
         <div class="container">
@@ -17,15 +18,19 @@
                 </div>
                 <div class="login_signup_form">
                     <div class="login_signup_toggle">
-                        <button id="login_toggle" class="login_signup_toggle_btn login_toggle">Log In</button>
-                        <button id="signup_toggle" class="login_signup_toggle_btn signup_toggle">Sign up</button>
+                        <button id="login_toggle" class="login_signup_toggle_btn
+                            login_toggle">Log In</button>
+                        <button id="signup_toggle"
+                            class="login_signup_toggle_btn signup_toggle">Sign
+                            up</button>
                     </div>
                     <div class="login_form form" id="login_form">
                         <form action="">
                             <p>Email</p>
-                            <input type="text">
+                            <input type="email" id="email">
                             <p>Password</p>
-                            <input type="password">
+                            <input type="password" id="password">
+                            <button onclick="signIn">Submit</button>
                         </form>
                     </div>
                     <div class="signup_form form" id="signup_form">
@@ -38,6 +43,7 @@
                             <input type="password">
                             <p>Re-enter password</p>
                             <input type="password">
+                            <button onclick="signUp">Submit</button>
                         </form>
                     </div>
                     <img class="google_auth" onclick="openForm()"
@@ -63,14 +69,18 @@
             <div class="popup_message">
                 <div class="popup_container" id="popup_cards">
                     <div class="mentorPro">
-                      <div class="mentor_img"> <img src="../assets/svg/mentorprofile.svg" alt="">
-                      </div> 
-                        <button onclick="openRegisterForm()">Go to mentor profile </button>
+                        <div class="mentor_img"> <img
+                                src="../assets/svg/mentorprofile.svg" alt="">
+                        </div>
+                        <button onclick="openRegisterForm()">Go to mentor
+                            profile </button>
                     </div>
                     <div class="menteePro">
-                       <div class="mentee_img"><img src="../assets/svg/Menteeprofile.svg" alt="">
-                       </div>
-                        <button onclick="openRegisterForm()">Go to mentee profile </button>
+                        <div class="mentee_img"><img
+                                src="../assets/svg/Menteeprofile.svg" alt="">
+                        </div>
+                        <button onclick="openRegisterForm()">Go to mentee
+                            profile </button>
                     </div>
                 </div>
             </div>
@@ -80,28 +90,28 @@
                 <div class="heading">Registration form</div>
                 <div class="details">
                     <form action="" method="post" id="registration_form">
-                    <div class="parameter">
-                        <label for="name">Full name</label>
-                        <input type="text" id="name">
-                    </div>
-                    <div class="parameter">
-                        <label for="designation">Designation</label>
-                        <input type="text" id="designation">
-                    </div>
-                    <div class="parameter">
-                        <label for="experience">Experience</label>
-                        <input type="text" id="experience">
-                    </div>
-                    <div class="parameter">
-                        <label for="country">Country</label>
-                        <input type="text" id="country">
-                    </div>
-                    <div class="bio">
-                        <label for="bio">Your Bio</label>
-                        <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
-                    </div>
-                    <button class="register-btn" type="submit">Register</button>
-                  </form>
+                        <div class="parameter">
+                            <label for="name">Full name</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="parameter">
+                            <label for="designation">Designation</label>
+                            <input type="text" id="designation">
+                        </div>
+                        <div class="parameter">
+                            <label for="experience">Experience</label>
+                            <input type="text" id="experience">
+                        </div>
+                        <div class="parameter">
+                            <label for="country">Country</label>
+                            <input type="text" id="country">
+                        </div>
+                        <div class="bio">
+                            <label for="bio">Your Bio</label>
+                            <textarea name="bio" id="bio" cols="30" rows="5"></textarea>
+                        </div>
+                        <button class="register-btn" type="submit">Register</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -113,15 +123,14 @@
           function openForm() {
             document.getElementById("popup_cards").style.display = "block";
             document.querySelector(".overlay").style.display = "block";
-            } 
-        console.log("login")
-
+        }
+        
+        // registration form function  
         document.querySelector(".registration_form").style.display = "none";
         function openRegisterForm(){
             document.getElementById("popup_cards").style.display = "none";
             document.querySelector(".registration_form").style.display = "block";
         }
         </script>
-
     </body>
 </html>
