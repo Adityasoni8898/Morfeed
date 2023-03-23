@@ -26,16 +26,14 @@ const auth = getAuth(app);
 $("#create-new-user").click(function(){
     const email = $("#signup_email").val();
     const password = $("#signup_password").val();
-    CreateNewUser(email, password);
-    console.log(email);
+    createNewUser(email, password);
+    console.log("Sign up Successfull!");
 });
 
-function CreateNewUser(email, password){
+function createNewUser(email, password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);
-        console.log("Sign up successfull!");
     })
     .catch((error) => {
      var errorCode = error.code;
