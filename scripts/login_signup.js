@@ -19,3 +19,4 @@ signupToggle.addEventListener('click', () => {
   signupToggle.classList.add("selected");
   loginToggle.classList.remove("selected");
 });
+
