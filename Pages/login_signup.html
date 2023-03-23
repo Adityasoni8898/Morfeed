@@ -7,7 +7,11 @@
         <title>Sign In</title>
         <link rel="stylesheet" href="../styles/login_signup.css">
         <script src="../scripts/login_signup.js" defer></script>
-        <script src="../scripts/login_signup_form.js"></script>
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <!-- Firebase setup -->
+        <script type="module" src="../scripts/login_signup_form.js"></script>
     </head>
     <body>
         <div class="container">
@@ -35,15 +39,15 @@
                     </div>
                     <div class="signup_form form" id="signup_form">
                         <form action="">
-                            <p>Full name</p>
-                            <input type="text">
+                            <!-- <p>Full name</p>
+                            <input type="text"> -->
                             <p>Email</p>
-                            <input type="text">
+                            <input type="text" id="signup_email" required>
                             <p>Password</p>
-                            <input type="password">
-                            <p>Re-enter password</p>
-                            <input type="password">
-                            <button onclick="signUp">Submit</button>
+                            <input type="password" id="signup_password" required>
+                            <!-- <p>Re-enter password</p>
+                            <input type="password"> -->
+                            <button type="submit" id="create-new-user">Submit</button>
                         </form>
                     </div>
                     <img class="google_auth" onclick="openForm()"
