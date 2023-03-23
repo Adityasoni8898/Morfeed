@@ -63,10 +63,36 @@ onAuthStateChanged(auth, (user) => {
       currentUser = user;
       writeUserData(user);
       console.log(currentUser.email + " logged in")
-  
+
       // ...
     } else {
       // User is signed out
       // ...
     }
   });
+
+// ------------------adding data to DB ----------------------------
+
+
+  $("register-btn").click(function(){
+
+    const userBasicData = {
+      id: currentUser.uid,
+    //   owner: currentUser.uid,
+      name : $("#name").val(),
+      designation : $("#designation").val(),
+      experience : $("#experience").val(),
+      country : $("#country").val(),
+      bio : $("#bio").val(),
+    };
+
+    addDataToDB(userBasicData);
+  })
+
+  function addDataToDB(currentUser){
+    console.log("Hello ${currentUser.name}");
+    console.log(currentUser.id);
+
+    const db = getDatabase();
+    set(ref(db, 'Users/'+ currentUser.id + '/Basic-Data' ), currentUser);
+  }
