@@ -326,4 +326,5 @@ body{
   background: black;
   opacity: .9;
   z-index: 2;
+  filter: blur(5px);
 }

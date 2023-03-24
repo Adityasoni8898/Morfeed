@@ -1,13 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
     authDomain: "morfeed.firebaseapp.com",
@@ -21,7 +16,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);
 
 const auth = getAuth(app);
 
@@ -35,24 +30,16 @@ $("#create-new-user").click(function(){
 });
 
 function createNewUser(email, password){
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        const user = userCredential.user;
-    })
-    .catch((error) => {
-     var errorCode = error.code;
-     var errorMessage = error.message;
-     console.log(errorMessage);
-    });
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+      const user = userCredential.user;
+  })
+  .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+  });
 }
-
-
-function writeUserData(user) {
-    const db = getDatabase();
-    set(ref(db, 'users/' + user.uid), {
-      email: user.email
-    });
-  }
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -61,21 +48,16 @@ onAuthStateChanged(auth, (user) => {
       const uid = user.uid;
       var email = user.email;
       currentUser = user;
-      writeUserData(user);
-      console.log(currentUser.email + " logged in")
-
-      // ...
     } else {
-      // User is signed out
-      // ...
+
     }
   });
 
 // ------------------adding data to DB ----------------------------
 
 
-  $("register-btn").click(function(){
-
+  $("#register-btn").click(function(){
+    console.log("adding...");
     const userBasicData = {
       id: currentUser.uid,
     //   owner: currentUser.uid,
@@ -89,10 +71,10 @@ onAuthStateChanged(auth, (user) => {
     addDataToDB(userBasicData);
   })
 
-  function addDataToDB(currentUser){
-    console.log("Hello ${currentUser.name}");
-    console.log(currentUser.id);
-
+  function addDataToDB(userBasicData){
+    console.log("Hello " + userBasicData.name);
+    
     const db = getDatabase();
-    set(ref(db, 'Users/'+ currentUser.id + '/Basic-Data' ), currentUser);
+    set(ref(db, 'Users/'+ userBasicData.id + '/Basic-Data' ), userBasicData);
+    console.log("Your Data have been added Successfully");
   }
