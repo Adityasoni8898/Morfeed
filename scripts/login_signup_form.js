@@ -34,16 +34,37 @@ $("#create-new-user").click(function(){
     console.log("Sign up Successfull!");
 });
 
+$("#login-btn").click(function(){
+  var loginEmail = $("#login-email").val();
+  var loginPassword = $("#login-password").val();
+  SignIn(loginEmail, loginPassword);
+  console.log(`${loginEmail} logged in!`);
+});
+
 function createNewUser(email, password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
+        document.getElementById("popup_cards").style.display = "block";
+        document.querySelector(".overlay").style.display = "block";
     })
     .catch((error) => {
      var errorCode = error.code;
      var errorMessage = error.message;
      console.log(errorMessage);
     });
+}
+
+function SignIn(email, password){
+  signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorMessage);
+  })
 }
 
 
@@ -90,9 +111,25 @@ onAuthStateChanged(auth, (user) => {
   })
 
   function addDataToDB(currentUser){
-    console.log("Hello ${currentUser.name}");
+    console.log(`Hello ${currentUser.name}`);
     console.log(currentUser.id);
 
     const db = getDatabase();
     set(ref(db, 'Users/'+ currentUser.id + '/Basic-Data' ), currentUser);
+  }
+
+  function addDataToMentor(currentUser){
+    console.log(`Hello ${currentUser.name}`);
+    console.log(currentUser.id);
+
+    const db = getDatabase();
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
+  }
+
+  function addDataToMentee(currentUser){
+    console.log(`Hello ${currentUser.name}`);
+    console.log(currentUser.id);
+
+    const db = getDatabase();
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
   }
