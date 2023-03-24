@@ -31,10 +31,10 @@
                     <div class="login_form form" id="login_form">
                         <form action="">
                             <p>Email</p>
-                            <input type="email" id="email">
+                            <input type="email" id="login-email">
                             <p>Password</p>
-                            <input type="password" id="password">
-                            <button onclick="signIn">Submit</button>
+                            <input type="password" id="login-password">
+                            <button id="login-btn">Submit</button>
                         </form>
                     </div>
                     <div class="signup_form form" id="signup_form">
@@ -47,6 +47,7 @@
                             <input type="password" id="signup_password" required>
                             <!-- <p>Re-enter password</p>
                             <input type="password"> -->
+                            <button type="submit" id="create-new-user" onclick="openForm()">Submit</button>
                         </form>
                         <button type="submit" id="create-new-user" onclick="openForm()">Submit</button>
                     </div>
@@ -76,14 +77,14 @@
                         <div class="mentor_img"> <img
                                 src="../assets/svg/mentorprofile.svg" alt="">
                         </div>
-                        <button onclick="openRegisterForm()">Go to mentor
+                        <button id="mentor-profile" onclick="openRegisterForm()">Go to mentor
                             profile </button>
                     </div>
                     <div class="menteePro">
                         <div class="mentee_img"><img
                                 src="../assets/svg/Menteeprofile.svg" alt="">
                         </div>
-                        <button onclick="openRegisterForm()">Go to mentee
+                        <button id="mentee-profile" onclick="openRegisterForm()">Go to mentee
                             profile </button>
                     </div>
                 </div>
@@ -123,11 +124,11 @@
         <div class="overlay"></div>
 
         <script>
-          document.getElementById("popup_cards").style.display = "none"
-          function openForm() {
-            document.getElementById("popup_cards").style.display = "block";
-            document.querySelector(".overlay").style.display = "block";
-        }
+        document.getElementById("popup_cards").style.display = "none";
+        //   function openForm() {
+        //     document.getElementById("popup_cards").style.display = "block";
+        //     document.querySelector(".overlay").style.display = "block";
+        // }
         
         // registration form function  
         document.querySelector(".registration_form").style.display = "none";
