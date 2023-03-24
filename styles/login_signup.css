@@ -327,3 +327,20 @@ body{
   opacity: .9;
   z-index: 2;
 }
+
+/* --------------close button  */
+.close{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color:rgb(255, 248, 248) ;
+  color: #141414;
+  top: 30px;
+  right: 10px;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+
+}
