@@ -47,7 +47,6 @@
                             <input type="password" id="signup_password" required>
                             <!-- <p>Re-enter password</p>
                             <input type="password"> -->
-                            <button type="submit" id="create-new-user" onclick="openForm()">Submit</button>
                         </form>
                         <button type="submit" id="create-new-user" onclick="openForm()">Submit</button>
                     </div>
@@ -125,10 +124,10 @@
 
         <script>
         document.getElementById("popup_cards").style.display = "none";
-        //   function openForm() {
-        //     document.getElementById("popup_cards").style.display = "block";
-        //     document.querySelector(".overlay").style.display = "block";
-        // }
+          function openForm() {
+            document.getElementById("popup_cards").style.display = "block";
+            document.querySelector(".overlay").style.display = "block";
+        }
         
         // registration form function  
         document.querySelector(".registration_form").style.display = "none";
