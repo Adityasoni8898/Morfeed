@@ -309,7 +309,7 @@ body{
     background-color: #FFFFE3;
     color: #000;
     border-radius: 5px;
-    width: 100%;
+    width: 90%;
     font-weight: 700;
     font-size: 24px;
     padding: 10px;
@@ -326,5 +326,4 @@ body{
   background: black;
   opacity: .9;
   z-index: 2;
-  filter: blur(5px);
 }
