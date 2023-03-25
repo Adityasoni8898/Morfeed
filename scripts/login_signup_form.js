@@ -72,6 +72,23 @@ onAuthStateChanged(auth, (user) => {
     }
   });
 
+  //------------- Mentor Mentee selection ----------------
+
+  var isMentor;
+  var isMentee
+
+  $("#mentor-profile").click(function(){
+    isMentor = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  });
+
+  $("#mentee-profile").click(function(){
+    isMentee = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  });  
+
 // ------------------adding data to DB ----------------------------
 
 
@@ -91,26 +108,41 @@ onAuthStateChanged(auth, (user) => {
   })
 
   function addDataToDB(currentUser){
-    console.log("Hello ${currentUser.name}");
+    console.log(`Hello ${currentUser.name}`);
     console.log(currentUser.id);
-
     const db = getDatabase();
-    set(ref(db, 'Users/'+ userBasicData.id + '/Basic-Data' ), userBasicData);
+    set(ref(db, 'Users/'+ currentUser.id + '/Basic-Data' ), currentUser);
     console.log("Your Data have been added Successfully");
+
+    if (isMentor) {
+      addDataToMentor(currentUser);
+    };
+
+    if (isMentee) {
+      addDataToMentee(currentUser);
+    };
   }
 
   function addDataToMentor(currentUser){
-    console.log(`Hello ${currentUser.name}`);
-    console.log(currentUser.id);
-
     const db = getDatabase();
-    set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Mentorship_sessions_attended' ), {data : "null"});
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Feedback_sessions_attended' ), {data : "null"});
+    console.log("Mentor data added");
+
+    const mentorData = {
+      img: "null",
+      status : "free",
+      name : currentUser.name,
+      designation : currentUser.designation
+    }
+
+    set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
   }
 
   function addDataToMentee(currentUser){
-    console.log(`Hello ${currentUser.name}`);
-    console.log(currentUser.id);
-
     const db = getDatabase();
-    set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentee-data/Mentorship_sessions_attended' ), {data : "null"});
+    set(ref(db, 'Users/'+ currentUser.id + '/Mentee-data/Feedback_sessions_attended' ), {data : "null"});
+    console.log("Mentee data added");
   }
+

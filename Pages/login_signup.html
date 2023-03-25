@@ -76,14 +76,14 @@
                         <div class="mentor_img"> <img
                                 src="../assets/svg/mentorprofile.svg" alt="">
                         </div>
-                        <button id="mentor-profile" onclick="openRegisterForm()">Go to mentor
+                        <button id="mentor-profile">Go to mentor
                             profile </button>
                     </div>
                     <div class="menteePro">
                         <div class="mentee_img"><img
                                 src="../assets/svg/Menteeprofile.svg" alt="">
                         </div>
-                        <button id="mentee-profile" onclick="openRegisterForm()">Go to mentee
+                        <button id="mentee-profile">Go to mentee
                             profile </button>
                     </div>
                 </div>
@@ -123,18 +123,27 @@
         <div class="overlay"></div>
 
         <script>
+            
+        document.querySelector(".registration_form").style.display = "none";
         document.getElementById("popup_cards").style.display = "none";
-          function openForm() {
+
+        function openForm() {
             document.getElementById("popup_cards").style.display = "block";
             document.querySelector(".overlay").style.display = "block";
         }
         
         // registration form function  
-        document.querySelector(".registration_form").style.display = "none";
-        function openRegisterForm(){
-            document.getElementById("popup_cards").style.display = "none";
-            document.querySelector(".registration_form").style.display = "block";
-        }
+
+        // function openRegisterFormMentor(){
+        //     document.getElementById("popup_cards").style.display = "none";
+        //     document.querySelector(".registration_form").style.display = "block";
+        // }
+
+        // function openRegisterFormMentee(){
+        //     document.getElementById("popup_cards").style.display = "none";
+        //     document.querySelector(".registration_form").style.display = "block";
+        // }
+
         </script>
     </body>
 </html>
