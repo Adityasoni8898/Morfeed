@@ -28,25 +28,6 @@ function openForm() {
   document.getElementById("popup_cards").style.display = "block";
   document.querySelector(".overlay").style.display = "block";
 }
-        
-
-  //------------- Mentor Mentee selection ----------------
-
-  var isMentor;
-  var isMentee
-
-  $("#mentor-profile").click(function(){
-    isMentor = true ;
-    document.getElementById("popup_cards").style.display = "none";
-    document.querySelector(".registration_form").style.display = "block";
-  });
-
-  $("#mentee-profile").click(function(){
-    isMentee = true ;
-    document.getElementById("popup_cards").style.display = "none";
-    document.querySelector(".registration_form").style.display = "block";
-  }); 
-
 
      // -----close button---
      const registrationForm = document.querySelector(".registration_form");

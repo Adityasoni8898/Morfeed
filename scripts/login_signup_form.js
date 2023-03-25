@@ -71,6 +71,24 @@ onAuthStateChanged(auth, (user) => {
 
     }
   });
+
+
+//------------- Mentor Mentee selection ----------------
+
+  var isMentor;
+  var isMentee;
+
+  $("#mentor-profile").click(function(){
+    isMentor = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  });
+
+  $("#mentee-profile").click(function(){
+    isMentee = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  }); 
  
 
 // ------------------adding data to DB ----------------------------
@@ -80,7 +98,6 @@ onAuthStateChanged(auth, (user) => {
     console.log("adding...");
     const userBasicData = {
       id: currentUser.uid,
-    //   owner: currentUser.uid,
       name : $("#name").val(),
       designation : $("#designation").val(),
       experience : $("#experience").val(),
@@ -89,6 +106,17 @@ onAuthStateChanged(auth, (user) => {
     };
 
     addDataToDB(userBasicData);
+
+    if (isMentor) {
+      addDataToMentor(userBasicData);
+    };
+    
+    if (isMentee) {
+      addDataToMentee(userBasicData);
+    };
+
+    window.location.href = "../Pages/find_a_mentor.html";
+
   })
 
   function addDataToDB(currentUser){
@@ -97,14 +125,6 @@ onAuthStateChanged(auth, (user) => {
     const db = getDatabase();
     set(ref(db, 'Users/'+ currentUser.id + '/Basic-Data' ), currentUser);
     console.log("Your Data have been added Successfully");
-
-    if (isMentor) {
-      addDataToMentor(currentUser);
-    };
-
-    if (isMentee) {
-      addDataToMentee(currentUser);
-    };
   }
 
   function addDataToMentor(currentUser){
@@ -131,4 +151,4 @@ onAuthStateChanged(auth, (user) => {
   }
   
 
-   // -----close button--- Moved to login_signup.js
+// -----close button--- Moved to login_signup.js
