@@ -146,3 +146,13 @@ onAuthStateChanged(auth, (user) => {
     console.log("Mentee data added");
   }
 
+    // set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
+  
+
+   // -----close button---
+  const registrationForm = document.querySelector(".registration_form");
+  const close = document.querySelector(".close");
+  close.addEventListener("click",()=>{
+    registrationForm.style.display="none"
+    document.querySelector(".overlay").style.display = "none";
+   })
