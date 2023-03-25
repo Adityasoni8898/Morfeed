@@ -19,4 +19,40 @@ signupToggle.addEventListener('click', () => {
   signupToggle.classList.add("selected");
   loginToggle.classList.remove("selected");
 });
+// ----------- Form control ------------------
 
+document.querySelector(".registration_form").style.display = "none";
+document.getElementById("popup_cards").style.display = "none";
+
+function openForm() {
+  document.getElementById("popup_cards").style.display = "block";
+  document.querySelector(".overlay").style.display = "block";
+}
+        
+
+  //------------- Mentor Mentee selection ----------------
+
+  var isMentor;
+  var isMentee
+
+  $("#mentor-profile").click(function(){
+    isMentor = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  });
+
+  $("#mentee-profile").click(function(){
+    isMentee = true ;
+    document.getElementById("popup_cards").style.display = "none";
+    document.querySelector(".registration_form").style.display = "block";
+  }); 
+
+
+     // -----close button---
+     const registrationForm = document.querySelector(".registration_form");
+     const close = document.querySelector(".close");
+     close.addEventListener("click",()=>{
+       registrationForm.style.display="none"
+       document.querySelector(".overlay").style.display = "none";
+      })
+   

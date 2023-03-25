@@ -71,23 +71,7 @@ onAuthStateChanged(auth, (user) => {
 
     }
   });
-
-  //------------- Mentor Mentee selection ----------------
-
-  var isMentor;
-  var isMentee
-
-  $("#mentor-profile").click(function(){
-    isMentor = true ;
-    document.getElementById("popup_cards").style.display = "none";
-    document.querySelector(".registration_form").style.display = "block";
-  });
-
-  $("#mentee-profile").click(function(){
-    isMentee = true ;
-    document.getElementById("popup_cards").style.display = "none";
-    document.querySelector(".registration_form").style.display = "block";
-  });  
+ 
 
 // ------------------adding data to DB ----------------------------
 
@@ -145,14 +129,6 @@ onAuthStateChanged(auth, (user) => {
     set(ref(db, 'Users/'+ currentUser.id + '/Mentee-data/Feedback_sessions_attended' ), {data : "null"});
     console.log("Mentee data added");
   }
-
-    // set(ref(db, 'Users/'+ currentUser.id + '/Mentor' ), currentUser);
   
 
-   // -----close button---
-  const registrationForm = document.querySelector(".registration_form");
-  const close = document.querySelector(".close");
-  close.addEventListener("click",()=>{
-    registrationForm.style.display="none"
-    document.querySelector(".overlay").style.display = "none";
-   })
+   // -----close button--- Moved to login_signup.js
