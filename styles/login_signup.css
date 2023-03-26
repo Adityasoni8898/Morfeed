@@ -160,6 +160,10 @@ body{
 }
 
 /* ------------------  */
+.popup_cards{
+    display: none;
+}
+
 .popup_message {
   position: absolute;
   top: 20%;
@@ -244,6 +248,7 @@ body{
 
 
 .registration_form{
+    display: none;
     position: absolute;
     background-color:  #10100F;
     width: 500px;

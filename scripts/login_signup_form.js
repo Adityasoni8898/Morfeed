@@ -115,7 +115,9 @@ onAuthStateChanged(auth, (user) => {
       addDataToMentee(userBasicData);
     };
 
-    window.location.href = "../Pages/find_a_mentor.html";
+    setTimeout(() => {
+      window.location.href = "../Pages/find_a_mentor.html";
+    }, 2000); 
 
   })
 

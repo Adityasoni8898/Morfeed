@@ -21,19 +21,16 @@ signupToggle.addEventListener('click', () => {
 });
 // ----------- Form control ------------------
 
-document.querySelector(".registration_form").style.display = "none";
-document.getElementById("popup_cards").style.display = "none";
-
 function openForm() {
   document.getElementById("popup_cards").style.display = "block";
   document.querySelector(".overlay").style.display = "block";
 }
 
      // -----close button---
-     const registrationForm = document.querySelector(".registration_form");
-     const close = document.querySelector(".close");
-     close.addEventListener("click",()=>{
-       registrationForm.style.display="none"
-       document.querySelector(".overlay").style.display = "none";
-      })
+const registrationForm = document.querySelector(".registration_form");
+const close = document.querySelector(".close");
+close.addEventListener("click",()=>{
+  registrationForm.style.display="none"
+  document.querySelector(".overlay").style.display = "none";
+})
    
