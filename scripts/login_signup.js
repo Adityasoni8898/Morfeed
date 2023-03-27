@@ -20,6 +20,7 @@ signupToggle.addEventListener('click', () => {
   loginToggle.classList.remove("selected");
 });
 // ----------- Form control ------------------
+document.getElementById("popup_cards").style.display = "none";
 
 function openForm() {
   document.getElementById("popup_cards").style.display = "block";
