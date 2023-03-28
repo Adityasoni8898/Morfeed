@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getStorage, uploadBytes } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
@@ -17,6 +18,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+const storage = getStorage(app);
 
 const auth = getAuth(app);
 
@@ -121,6 +124,16 @@ onAuthStateChanged(auth, (user) => {
 
   })
 
+  $("#register-mentor-data").click(function() {
+    const mentorData = {
+      id: currentUser.id,
+      name: $("#mentor-name").val(),
+      img: $("#mentor-image"),
+      status: $("mentor-status").val(),
+      designation: $("mentor-designation").val(),
+    }
+  })
+
   function addDataToDB(currentUser){
     console.log(`Hello ${currentUser.name}`);
     console.log(currentUser.id);
@@ -135,12 +148,12 @@ onAuthStateChanged(auth, (user) => {
     set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Feedback_sessions_attended' ), {data : "null"});
     console.log("Mentor data added");
 
-    const mentorData = {
-      img: "null",
-      status : "free",
-      name : currentUser.name,
-      designation : currentUser.designation
-    }
+    // const mentorData = {
+    //   img: "null",
+    //   status : "free",
+    //   name : currentUser.name,
+    //   designation : currentUser.designation
+    // }
 
     set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
   }

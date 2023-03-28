@@ -264,7 +264,7 @@ body{
     align-items: center;
 }
 
-.registration_form .heading{
+.registration_form .heading, .mentor_form .heading{
     color: #fff;
     font-weight: 700;
     font-family: 'Satoshi';
@@ -274,7 +274,7 @@ body{
     margin: 10px 0px;
 }
 
-.registration_form label{
+.registration_form label, .mentor_form label{
     color: #fff;
     font-style: normal;
     font-size: 22px;
@@ -283,7 +283,7 @@ body{
     margin-top: 10px;
 }
 
-.registration_form input{
+.registration_form input, .mentor_form input{
     width: 100%;
     border: 1px solid #fff;
     background-color: #000000;
@@ -310,7 +310,7 @@ body{
     font-size: 20px;
 }
 
-.register-btn{
+.register-btn, .register-mentor-data{
     background-color: #FFFFE3;
     color: #000;
     border-radius: 5px;
@@ -349,4 +349,14 @@ body{
   /* padding: 2px; */
   border-radius: 50%;
   font-weight: 900;
+}
+
+.mentor_form{
+  position: absolute;
+  background-color:  #10100F;
+  width: 500px;
+  height: 500px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  z-index: 3;
 }
