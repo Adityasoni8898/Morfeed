@@ -23,6 +23,8 @@ const storage = getStorage(app);
 
 const auth = getAuth(app);
 
+const storageRef = ref(storage, 'images');
+
 var currentUser = {};
 
 $("#create-new-user").click(function(){
