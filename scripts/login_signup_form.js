@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-import { getStorage, uploadBytes } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+import { getStorage, uploadBytes, ref as imageRef } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
@@ -23,7 +23,9 @@ const storage = getStorage(app);
 
 const auth = getAuth(app);
 
-const storageRef = ref(storage, 'images');
+// const storageRef = ref(storage, 'images');
+
+
 
 var currentUser = {};
 
@@ -98,6 +100,8 @@ onAuthStateChanged(auth, (user) => {
 
 // ------------------adding data to DB ----------------------------
 
+const mentorForm = document.querySelector(".mentor_form");
+
 
   $("#register-btn").click(function(){
     console.log("adding...");
@@ -113,28 +117,24 @@ onAuthStateChanged(auth, (user) => {
     addDataToDB(userBasicData);
 
     if (isMentor) {
-      addDataToMentor(userBasicData);
+
+      registrationForm.style.display="none";
+      mentorForm.style.display = "block";
+
+      $("#register-mentor-data").click(function() {
+        addDataToMentor(userBasicData);
+        mentorProfilePic(userBasicData);
+      })
     };
     
     if (isMentee) {
       addDataToMentee(userBasicData);
+      setTimeout(() => {
+        window.location.href = "../Pages/find_a_mentor.html";
+      }, 2000); 
     };
-
-    setTimeout(() => {
-      window.location.href = "../Pages/find_a_mentor.html";
-    }, 2000); 
-
   })
 
-  $("#register-mentor-data").click(function() {
-    const mentorData = {
-      id: currentUser.id,
-      name: $("#mentor-name").val(),
-      img: $("#mentor-image"),
-      status: $("mentor-status").val(),
-      designation: $("mentor-designation").val(),
-    }
-  })
 
   function addDataToDB(currentUser){
     console.log(`Hello ${currentUser.name}`);
@@ -150,12 +150,13 @@ onAuthStateChanged(auth, (user) => {
     set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Feedback_sessions_attended' ), {data : "null"});
     console.log("Mentor data added");
 
-    // const mentorData = {
-    //   img: "null",
-    //   status : "free",
-    //   name : currentUser.name,
-    //   designation : currentUser.designation
-    // }
+    const mentorData = {
+      // id: currentUser.id,
+      name : $("#name").val(),
+      designation : $("#designation").val(),
+      img: "image-link",
+      status: $("#status").val(),
+    }
 
     set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
   }
@@ -169,3 +170,23 @@ onAuthStateChanged(auth, (user) => {
   
 
 // -----close button--- Moved to login_signup.js
+
+// ----------------profile pic upload-------------------
+
+function mentorProfilePic(currentUser){
+  const fileInput = document.getElementById("mentor-image");
+  const file = fileInput.files[0];
+  const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpg");
+  
+  uploadBytes(storageRef, file)
+    .then(() => {
+      console.log("File uploaded successfully");
+      //to find a mentor page
+      setTimeout(() => {
+        window.location.href = "../Pages/find_a_mentor.html";
+      }, 500); 
+    })
+    .catch((error) => {
+      console.error("Error uploading file: ", error);
+    });
+}

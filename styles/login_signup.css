@@ -352,6 +352,7 @@ body{
 }
 
 .mentor_form{
+  display: none;
   position: absolute;
   background-color:  #10100F;
   width: 500px;
