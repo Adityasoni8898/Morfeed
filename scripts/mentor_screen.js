@@ -21,3 +21,14 @@ function currentDate() {
 
 const dateLinks = document.getElementsByClassName("date");
 [...dateLinks].forEach(dateLink => dateLink.addEventListener("click", currentDate));
+
+document.getElementById("bookNow_form").style.display = "none";
+
+function openForm() {
+  document.getElementById("bookNow_form").style.display = "block";
+}
+
+const close = document.querySelector(".close");
+close.addEventListener("click",()=>{
+  document.getElementById("bookNow_form").style.display = "none";
+})
