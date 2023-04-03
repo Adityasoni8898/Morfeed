@@ -362,6 +362,12 @@ body{
   z-index: 3;
 }
 
+.mentordisplay{
+  height: 100px;
+  width: 100px;
+  border: 1px solid grey;
+}
+
 .error{
   color: red;
   font-size: 12px;

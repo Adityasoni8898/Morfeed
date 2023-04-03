@@ -178,21 +178,30 @@ const mentorForm = document.querySelector(".mentor_form");
 // ----------------profile pic upload-------------------
 
 function mentorProfilePic(currentUser){
-  const fileInput = document.getElementById("mentor-image");
-  const file = fileInput.files[0];
-  const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpg");
+  processImage();
+  console.log("processing image")
+
+  // const fileInput = document.getElementById("mentor-image");
+  const outputimage = document.querySelector(".mentordisplay");
+  // const file = fileInput.files[0];
+  processImage().then(jpegDataUrl => {
+    console.log("process complete")
+    const file = jpegDataUrl;
+    outputimage.innerHTML = "<img src='" + file + "' width='" + 100 + "' height='" + 100 + "'>";
+    const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
   
-  uploadBytes(storageRef, file)
-    .then(() => {
-      console.log("File uploaded successfully");
-      document.getElementsByClassName("error").style.display = "none";
-      //to find a mentor page
-      setTimeout(() => {
-        window.location.href = "../Pages/find_a_mentor.html";
-      }, 500); 
-    })
-    .catch((error) => {
-      console.error("Error uploading file: ", error);
-      document.getElementsByClassName("error").style.display = "block";
-    });
+    uploadBytes(storageRef, file)
+      .then(() => {
+        console.log("File uploaded successfully");
+        document.getElementsByClassName("error").style.display = "none";
+        //to find a mentor page
+        // setTimeout(() => {
+        //   window.location.href = "../Pages/find_a_mentor.html";
+        // }, 500); 
+      })
+      .catch((error) => {
+        console.error("Error uploading file: ", error);
+        document.getElementsByClassName("error").style.display = "block";
+      });
+  });
 }
