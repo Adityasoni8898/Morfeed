@@ -1,8 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 import { getStorage, uploadBytes, ref as imageRef } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
@@ -22,6 +23,9 @@ const analytics = getAnalytics(app);
 const storage = getStorage(app);
 
 const auth = getAuth(app);
+
+const database = firebase.database();
+
 
 // const storageRef = ref(storage, 'images');
 
@@ -189,4 +193,24 @@ function mentorProfilePic(currentUser){
     .catch((error) => {
       console.error("Error uploading file: ", error);
     });
+}
+
+
+// Fetch Data
+function fetchData(){
+  const usersRef = database.ref('users');
+
+  // Listen for changes to the data
+  usersRef.on('value', (snapshot) => {
+    const users = snapshot.val();
+    // clear any previous data displayed
+    document.getElementById('user-list').innerHTML = '';
+    // loop through the users and display them
+    for (let userId in users) {
+      const userData = users[userId];
+      const userElement = document.createElement('div');
+      userElement.innerHTML = `<p>${userData.name}, ${userData.email}</p>`;
+      document.getElementById('user-list').appendChild(userElement);
+    }
+  });
 }
