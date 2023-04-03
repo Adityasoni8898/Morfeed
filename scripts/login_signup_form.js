@@ -47,11 +47,13 @@ function createNewUser(email, password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
+        document.getElementsByClassName("error").style.display = "none";
     })
     .catch((error) => {
      var errorCode = error.code;
      var errorMessage = error.message;
      console.log(errorMessage);
+     document.getElementsByClassName("error").style.display = "block";
     });
 }
 
@@ -59,11 +61,13 @@ function SignIn(email, password){
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
+    document.getElementsByClassName("error").style.display = "none";
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorMessage);
+    document.getElementsByClassName("error").style.display = "block"; 
   })
 }
 
@@ -189,6 +193,7 @@ function mentorProfilePic(currentUser){
     uploadBytes(storageRef, file)
       .then(() => {
         console.log("File uploaded successfully");
+        document.getElementsByClassName("error").style.display = "none";
         //to find a mentor page
         // setTimeout(() => {
         //   window.location.href = "../Pages/find_a_mentor.html";
@@ -196,6 +201,7 @@ function mentorProfilePic(currentUser){
       })
       .catch((error) => {
         console.error("Error uploading file: ", error);
+        document.getElementsByClassName("error").style.display = "block";
       });
   });
 }

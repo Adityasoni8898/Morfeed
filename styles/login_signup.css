@@ -367,3 +367,9 @@ body{
   width: 100px;
   border: 1px solid grey;
 }
+.error{
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+  display: none;
+}
