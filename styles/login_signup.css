@@ -361,3 +361,10 @@ body{
   border-radius: 15px;
   z-index: 3;
 }
+
+.error{
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+  display: none;
+}
