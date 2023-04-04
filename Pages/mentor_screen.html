@@ -292,11 +292,45 @@
     
             </div>
     
-            <button class="bookBtn">Book Now</button>
+            <button onclick="openForm()" id="bookBtn" class="bookBtn">Book Now</button>
     
             </div>
             
           </div>
+ 
+
+          <div class="bookNow_form" id="bookNow_form">
+            <div class="heading">Book session</div>
+            <div class="details">
+                <form action=" " method="post" id="session_registration">
+                    <div class="parameter">
+                        <label for="time">Timing</label>
+                        <input type="text" id="time">
+                    </div>
+                    <div class="parameter">
+                        <label for="topic">Topic</label>
+                        <input type="text" id="topic">
+                    </div>
+                    <div class="parameter">
+                        <label for="input_file">Upload Zip File</label>
+                        <input type="file" id="input_file">
+                    </div>
+                    <div class="parameter">
+                        <label for="country">Github Repo Link</label>
+                        <input type="url" id="country">
+                    </div>
+                    <div class="session_description">
+                        <label for="session_description">Pre Session Description</label>
+                        <textarea name="bio" id="session_description" cols="30" rows="5"></textarea>
+                    </div>
+                </form>
+                <button id="book-session-btn" class="book-session-btn" type="submit">Register</button>
+                <p class="error">Something Went Wrong!</p>
+                <span class="close">X</span>
+            </div>
+         </div>
+
+         <!-- <div class="overlay"></div> -->
 
           <script src="../scripts/mentor_screen.js"></script>
     </body>

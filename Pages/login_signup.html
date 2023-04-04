@@ -7,6 +7,8 @@
         <title>Sign In</title>
         <link rel="stylesheet" href="../styles/login_signup.css">
         <script src="../scripts/login_signup.js" defer></script>
+        <script src="../scripts/image_processing.js" defer></script>
+
 
         <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -34,9 +36,9 @@
                     <div class="login_form form" id="login_form">
                         <form action="">
                             <p>Email</p>
-                            <input type="email" id="login-email">
+                            <input type="email" id="login-email" autocomplete="username">
                             <p>Password</p>
-                            <input type="password" id="login-password">
+                            <input type="password" id="login-password" autocomplete="current-password">
                             <button id="login-btn">Submit</button>
                         </form>
                     </div>
@@ -45,9 +47,9 @@
                             <!-- <p>Full name</p>
                             <input type="text"> -->
                             <p>Email</p>
-                            <input type="text" id="signup_email" required>
+                            <input type="text" id="signup_email" required autocomplete="username">
                             <p>Password</p>
-                            <input type="password" id="signup_password" required>
+                            <input type="password" id="signup_password" required autocomplete="current-password">
                             <!-- <p>Re-enter password</p>
                             <input type="password"> -->
                         </form>
@@ -119,6 +121,7 @@
                         </div>
                     </form>
                     <button id="register-btn" class="register-btn" type="submit">Register</button>
+                    <p class="error">Something Went Wrong!</p>
                     <span class="close">X</span>
                 </div>
             </div>
@@ -131,6 +134,7 @@
                         <div class="parameter">
                             <label for="mentor-image">Upload Image</label>
                             <input class="image_upload" type="file" id="mentor-image">
+                            <div class="mentordisplay"></div>
                             <!-- <input class="image_upload" type="file" id="mentor-image" onchange="readURL(this);"> -->
                         </div>
                         <div class="parameter">
@@ -147,6 +151,7 @@
                         </div> -->
                     </form>
                     <button id="register-mentor-data" class="register-mentor-data" type="submit">Register</button>
+                    <p class="error">Something Went Wrong!</p>
                     <span class="close">X</span>
                 </div>
             </div>
