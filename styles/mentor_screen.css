@@ -489,3 +489,110 @@ button:active{
     border-radius: 10px;
     margin-top: 20px;
 }
+
+.bookNow_form{
+    position: absolute;
+    background-color:  #10100F;
+    width: 500px;
+    height: 675px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    z-index: 3;
+    top: 50%;
+    left: 25%;
+}
+
+.bookNow_form .details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.bookNow_form .heading{
+    color: #fff;
+    font-weight: 700;
+    font-family: 'Satoshi';
+    font-size: 32px;
+    text-align: center;
+    line-height: 43px;
+    margin: 10px 0px;
+}
+
+.bookNow_form label{
+    color: #fff;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.bookNow_form input{
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.parameter{
+    margin: 10px 0px;
+}
+
+.session_description{
+   margin-top: 10px;
+}
+
+.session_description textarea{
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.book-session-btn{
+    background-color: #FFFFE3;
+    color: #000;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 10px;
+    margin: 20px 0px;
+    cursor: pointer;
+}
+
+.overlay{
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: grey;
+  opacity: .9;
+  z-index: 2;
+}
+
+/* --------------close button  */
+.close{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color:rgb(255, 248, 248) ;
+  color: #141414;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  cursor: pointer;
+  /* padding: 2px; */
+  border-radius: 50%;
+  font-weight: 900;
+}
