@@ -49,15 +49,10 @@ function processImage() {
 
           // Convert the cropped image to JPEG
           const jpegDataUrl = canvas.toDataURL("image/jpeg", 0.8);
+          console.log(jpegDataUrl);
 
-          // Create a blob object from the JPEG data URL
-          const blob = new Blob([jpegDataUrl], {type: 'image/jpeg'});
-
-          // Set the blob object to the 'file' variable
-          file = blob;
-
-          // Return the blob object
-          resolve(file);
+          // Return the JPEG data URL
+          resolve(jpegDataUrl);
         });
 
         img.src = reader.result;
@@ -67,7 +62,7 @@ function processImage() {
       reader.readAsDataURL(file);
       
     });
-}
+  }
 
   // Call the processImage() function and use the result to display the JPEG image
 // processImage().then(jpegDataUrl => {

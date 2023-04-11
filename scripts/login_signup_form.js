@@ -186,11 +186,11 @@ function mentorProfilePic(currentUser){
   // const file = fileInput.files[0];
   processImage().then(jpegDataUrl => {
     console.log("process complete")
-    const file = jpegDataUrl;
-    outputimage.innerHTML = "<img src='" + file + "' width='" + 100 + "' height='" + 100 + "'>";
+    // const file = jpegDataUrl;
+    outputimage.innerHTML = "<img src='" + jpegDataUrl + "' width='" + 100 + "' height='" + 100 + "'>";
     const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
   
-    uploadBytes(storageRef, file)
+    uploadBytes(storageRef, jpegDataUrl)
       .then(() => {
         console.log("File uploaded successfully");
         document.getElementsByClassName("error").style.display = "none";
