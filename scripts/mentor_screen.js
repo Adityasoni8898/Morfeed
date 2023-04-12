@@ -37,24 +37,26 @@ close.addEventListener("click",()=>{
 // const apiSecret = 'ahkOuYq0XHF3J4VvgSo6CnHer2YHyDpuh8Bx';
 
 // // IM Chat History Token = 'eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJRUlhySlY0QVQ4ZWROakRidFhoeFRBIn0.OtCJ9MREf5c71ps4eJSSqrkZ_tnOZ4RVwgOF-tFKEPo'
-// // const secretToken = '-_Z9Q4-CRDiyXj0uL-RhEA';
-// // const verificationToken = 'ZnQ7v4mnS2a3dhFADs2B0Q';
+// const secretToken = '-_Z9Q4-CRDiyXj0uL-RhEA';
+// const verificationToken = 'ZnQ7v4mnS2a3dhFADs2B0Q';
 
 // // Replace with your meeting details
-// const meetingTopic = document.getElementById("topic").value;
+// const meetingTopic = 'New Meet';
 // const meetingDuration = 60; // in minutes
 // const meetingTimezone = '(GMT+5:30) India'; // see https://zoom.github.io/api/#time-zones
 
 // const origin = "http://127.0.0.1:5500";
 
+// const jwToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IkJMVjdldXpkUTZ1QW1aYzloWXNxLXciLCJleHAiOjE2ODEzMTc0NTAsImlhdCI6MTY4MTIzMTA1MX0.aq-HdX-OQwyFKCNV28ipWsUDAbx8VzWBvj3Qek47jPA';
+
 // // Add a click event listener to the button
 // document.getElementById('book-session-btn').addEventListener('click', () => {
 //   // Make a POST request to the Zoom API to create a new meeting
-//   fetch(`https://api.zoom.us/v2/users/me/meetings`, {
+//   fetch(`https://api.zoom.us/v2/users/me/meeting`, {
 //     method: 'POST',
 //     mode: 'no-cors',
 //     headers: {
-//       'Authorization': `Bearer ${apiKey}.${apiSecret}`,
+//       'Authorization': `Bearer ${jwToken}`,
 //       'Content-Type': 'application/json',
 //       'Access-Control-Allow-Origin': `${origin}`,
 //     },
@@ -79,7 +81,7 @@ close.addEventListener("click",()=>{
 function generateZoomLink() {
   const apiKey = 'BLV7euzdQ6uAmZc9hYsq-w';         
   const apiSecret = 'ahkOuYq0XHF3J4VvgSo6CnHer2YHyDpuh8Bx';   
-  const jwToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IkJMVjdldXpkUTZ1QW1aYzloWXNxLXciLCJleHAiOjE2ODA4ODUyMjEsImlhdCI6MTY4MDc5ODgyM30.gjC48vIx80dQ1GZHXrLyoJYktajyR-RCVc8iLYNuw9g';   
+  const jwToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IkJMVjdldXpkUTZ1QW1aYzloWXNxLXciLCJleHAiOjE2ODEzMTc0NTAsImlhdCI6MTY4MTIzMTA1MX0.aq-HdX-OQwyFKCNV28ipWsUDAbx8VzWBvj3Qek47jPA';   
   const meeting = {           
     topic: 'New Zoom Meeting',
     type: '2',           
@@ -91,7 +93,7 @@ function generateZoomLink() {
   }         
   }; 
   const meetingData = btoa(JSON.stringify(meeting));
-  const apiUrl = `https://api.zoom.us/v2/users/me/meeting/token?access_token=${jwToken}`;
+  const apiUrl = `https://api.zoom.us/v2/users/me/meetings?access_token=${jwToken}`;
   // const apiUrl = `https://api.zoom.us/v2/users/me/meetings?api_key=${apiKey}&api_secret=${apiSecret}`;
   const url = `${apiUrl}&data=${meetingData}`;                  
   const zoomLink = document.getElementById('zoom-link');         
