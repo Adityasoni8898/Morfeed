@@ -1,3 +1,59 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signInWithCustomToken, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getStorage, uploadBytes, ref as imageRef} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
+    authDomain: "morfeed.firebaseapp.com",
+    databaseURL: "https://morfeed-default-rtdb.firebaseio.com",
+    projectId: "morfeed",
+    storageBucket: "morfeed.appspot.com",
+    messagingSenderId: "650817798515",
+    appId: "1:650817798515:web:04d400054e7cc4c7880506",
+    measurementId: "G-DR1VSR1S30"
+  };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// var currentUser = {};
+
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//     const uid = user.uid;
+//     var email = user.email;
+//     currentUser = user;
+//     // localStorage.setItem('userId', user.uid);
+//   } else {
+//     // localStorage.removeItem('userId');
+//   }
+// });
+
+// const userToken = localStorage.getItem("userToken");
+
+// if (userToken) {
+//   // Use the user's ID token to initialize the Firebase Auth instance
+//   auth.signInWithCustomToken(userToken)
+//     .then(() => {
+//       // User successfully authenticated, do something here
+//     })
+//     .catch((error) => {
+//       const errorCode = error.code;
+//       const errorMessage = error.message;
+//       console.log(errorMessage);
+//     });
+// } else {
+
+// }
+
+
+
+
+//----------------------------------------------------------------
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
 
