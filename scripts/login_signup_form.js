@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-import { getStorage, uploadBytes, ref as imageRef } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+import { getStorage, uploadBytes, ref as imageRef} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 
 const firebaseConfig = {
@@ -182,32 +182,103 @@ const mentorForm = document.querySelector(".mentor_form");
 // ----------------profile pic upload-------------------
 
 function mentorProfilePic(currentUser){
-  processImage();
-  console.log("processing image")
-
-  // const fileInput = document.getElementById("mentor-image");
-  const outputimage = document.querySelector(".mentordisplay");
-  // const file = fileInput.files[0];
-  processImage().then(jpegDataUrl => {
-    console.log("process complete")
-    const file = jpegDataUrl;
-    outputimage.innerHTML = "<img src='" + file + "' width='" + 100 + "' height='" + 100 + "'>";
-    const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
+  document.getElementById('register-mentor-data').innerHTML = "Please wait...";
+  document.getElementById('register-mentor-data').style.opacity = "0.75";
   
-    uploadBytes(storageRef, file)
-      .then(() => {
-        console.log("File uploaded successfully");
-        document.getElementsByClassName("error").style.display = "none";
+  //moved the entire code here because on a seperate file, the code was not working...
+
+  const inputFile = document.getElementById('mentor-image');
+  const outputimage = document.querySelector('.mentordisplay');
+  
+  // Code for Compressing and cropping the image
+  const file = inputFile.files[0];
+
+  // Create a new image element
+  const img = new Image();
+
+  // Load the input file into the image element
+  img.onload = () => {
+    // Create a canvas element
+    const canvas = document.createElement('canvas');
+
+    // Calculate the aspect ratio of the input image
+    const ctx = canvas.getContext("2d");
+    const maxSize = 200 * 1024;
+    let width = img.width;
+    let height = img.height;
+    // Compress the image
+    let compressionRatio = 1;
+    const fileSize = file.size;
+
+    if (fileSize > maxSize) {
+      compressionRatio = Math.sqrt(maxSize / fileSize);
+    }
+    const newWidth = width * compressionRatio;
+    const newHeight = height * compressionRatio;
+    canvas.width = newWidth;
+    canvas.height = newHeight;
+    ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+    // Crop the image to a square with the maximum middle part of the image
+    let offsetX = 0;
+    let offsetY = 0;
+    let cropWidth = width;
+    let cropHeight = height;
+
+    if (width > height) {
+      cropWidth = height;
+      offsetX = (width - height) / 2;
+    } else {
+      cropHeight = width;
+      offsetY = (height - width) / 2;
+    }
+    canvas.width = cropWidth;
+    canvas.height = cropHeight;
+    ctx.drawImage(img, offsetX, offsetY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+
+    // Compress the image by converting it to JPEG with a variable quality
+    let quality = 0.8;
+    let compressedImageData = canvas.toDataURL('image/jpeg', quality);
+    while (compressedImageData.length > 200000 && quality > 0.1) {
+      quality -= 0.1;
+      compressedImageData = canvas.toDataURL('image/jpeg', quality);
+    }
+
+    //display the image
+    outputimage.innerHTML = "<img src='" + compressedImageData + "' width='" + 100 + "' height='" + 100 + "'>";
+
+    // Convert the data URL to a Blob object
+    const compressedImageBlob = dataURLToBlob(compressedImageData);
+    
+    // Upload the compressed image to Firebase Storage
+    const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
+    uploadBytes(storageRef, compressedImageBlob).then(snapshot => {
+      // console.log('File available at', snapshot.ref.getDownloadURL());
         //to find a mentor page
-        // setTimeout(() => {
-        //   window.location.href = "../Pages/find_a_mentor.html";
-        // }, 500); 
-      })
-      .catch((error) => {
-        console.error("Error uploading file: ", error);
-        document.getElementsByClassName("error").style.display = "block";
-      });
-  });
+        setTimeout(() => {
+          window.location.href = "../Pages/find_a_mentor.html";
+        }, 500); 
+    }).catch(error => {
+      console.error(error);
+    });
+  };
+
+  // Set the source of the image element to the input file
+  img.src = URL.createObjectURL(file);
+
+  // Convert a data URL to a Blob object
+  function dataURLToBlob(dataURL) {
+    const parts = dataURL.split(';base64,');
+    const contentType = parts[0].split(':')[1];
+    const raw = window.atob(parts[1]);
+    const rawLength = raw.length;
+    const uInt8Array = new Uint8Array(rawLength);
+    for (let i = 0; i < rawLength; ++i) {
+      uInt8Array[i] = raw.charCodeAt(i);
+    }
+    return new Blob([uInt8Array], {type: contentType});
+  }
 }
 
 
