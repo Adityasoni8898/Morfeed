@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-import { getStorage, uploadBytes, ref as imageRef} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
+import { getStorage, uploadBytes, ref as imageRef, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
@@ -259,10 +259,20 @@ function mentorProfilePic(currentUser){
     const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
     uploadBytes(storageRef, compressedImageBlob).then(snapshot => {
       // console.log('File available at', snapshot.ref.getDownloadURL());
+
+
+        getDownloadURL(storageRef).then((url) => {
+            const db = getDatabase();
+            set(ref(db, 'Mentors/'+ currentUser.id), {img : url});
+            console.log("added image link");
+        }).catch((error) => {
+          console.log(error.message);
+        });
+
         //to find a mentor page
-        setTimeout(() => {
-          window.location.href = "../Pages/find_a_mentor.html";
-        }, 500); 
+        // setTimeout(() => {
+        //   window.location.href = "../Pages/find_a_mentor.html";
+        // }, 500); 
     }).catch(error => {
       console.error(error);
     });
@@ -283,4 +293,17 @@ function mentorProfilePic(currentUser){
     }
     return new Blob([uInt8Array], {type: contentType});
   }
+
+  // const storageRef = imageRef(storage, "Mentor_profile_pic/kkk/profile.jpeg");
+
+  // getDownloadURL(storageRef).then((url) => {
+  //   console.log("hello");
+  //   mentorPicture.src = url;
+  // }).catch((error) => {
+  //   console.log(error.message);
+  // });
+
+  // const db = getDatabase();
+  // set(ref(db, 'Mentors/'+ currentUser.id), {img : "image-link"});
+
 }
