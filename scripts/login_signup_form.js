@@ -135,7 +135,7 @@ const mentorForm = document.querySelector(".mentor_form");
 
       $("#register-mentor-data").click(function() {
         addDataToMentor(userBasicData);
-        mentorProfilePic(userBasicData);
+        
       })
     };
     
@@ -156,6 +156,7 @@ const mentorForm = document.querySelector(".mentor_form");
     console.log("Your Data have been added Successfully");
   }
 
+
   function addDataToMentor(currentUser){
     const db = getDatabase();
     set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Mentorship_sessions_attended' ), {data : "null"});
@@ -166,11 +167,14 @@ const mentorForm = document.querySelector(".mentor_form");
       // id: currentUser.id,
       name : $("#name").val(),
       designation : $("#designation").val(),
-      img: "image-link",
       status: $("#status").val(),
     }
 
-    set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
+    mentorProfilePic(currentUser, mentorData);
+
+    //mentor data uploading is moved to mentorProfilePic() > getDownloadURL() function
+    //because the url variable was not working outside the getDownloadURL()
+  
   }
 
   function addDataToMentee(currentUser){
@@ -185,7 +189,7 @@ const mentorForm = document.querySelector(".mentor_form");
 
 // ----------------profile pic upload-------------------
 
-function mentorProfilePic(currentUser){
+function mentorProfilePic(currentUser, mentorData){
   document.getElementById('register-mentor-data').innerHTML = "Please wait...";
   document.getElementById('register-mentor-data').style.opacity = "0.75";
   
@@ -258,21 +262,19 @@ function mentorProfilePic(currentUser){
     // Upload the compressed image to Firebase Storage
     const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
     uploadBytes(storageRef, compressedImageBlob).then(snapshot => {
-      // console.log('File available at', snapshot.ref.getDownloadURL());
-
 
         getDownloadURL(storageRef).then((url) => {
+            mentorData.img = url;
             const db = getDatabase();
-            set(ref(db, 'Mentors/'+ currentUser.id), {img : url});
-            console.log("added image link");
+            set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
         }).catch((error) => {
           console.log(error.message);
         });
 
         //to find a mentor page
-        // setTimeout(() => {
-        //   window.location.href = "../Pages/find_a_mentor.html";
-        // }, 500); 
+        setTimeout(() => {
+          window.location.href = "../Pages/find_a_mentor.html";
+        }, 5000); 
     }).catch(error => {
       console.error(error);
     });
@@ -294,16 +296,5 @@ function mentorProfilePic(currentUser){
     return new Blob([uInt8Array], {type: contentType});
   }
 
-  // const storageRef = imageRef(storage, "Mentor_profile_pic/kkk/profile.jpeg");
-
-  // getDownloadURL(storageRef).then((url) => {
-  //   console.log("hello");
-  //   mentorPicture.src = url;
-  // }).catch((error) => {
-  //   console.log(error.message);
-  // });
-
-  // const db = getDatabase();
-  // set(ref(db, 'Mentors/'+ currentUser.id), {img : "image-link"});
 
 }
