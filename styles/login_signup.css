@@ -371,6 +371,7 @@ body{
   margin: 16px auto;
   border: 1px solid grey;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .error{
