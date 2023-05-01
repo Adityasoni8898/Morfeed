@@ -20,22 +20,38 @@ const storage = getStorage(app);
 const auth = getAuth(app);
 
 
-var mentorNo = 0;
+document.addEventListener("DOMContentLoaded", function(event) {
+    fetchData();
+});
+
+function info(element){
+    const elementId = element.getAttribute("id");
+    sessionStorage.setItem("clickedMentorId", elementId);
+    console.log(sessionStorage.getItem("clickedMentorId"));
+    window.location.href = "../Pages/mentor_info.html";
+}
 
 function addItemsToPage(id, img, name, designation){
     var mentorOptions = document.querySelector(".mentor_options");
 
-    let mentorItem = `<div class="mentor_select" id="${id}" onclick="info(this)">
-                        <p class="free">Free</p>
-                        <img class="mentor_img" src="${img}">
-                        <div class="mentor_name">
-                            <h3>${name}</h3>
-                            <h4>${designation}</h4>
-                        </div>
-                        <div class="black_gradient"></div>
-                    </div>`;
+    let mentorItem = document.createElement("div");
+    mentorItem.classList.add("mentor_select");
+    mentorItem.setAttribute("id", id);
 
-    mentorOptions.insertAdjacentHTML("beforeend", mentorItem);
+    mentorItem.addEventListener("click", function() {
+        info(this);
+    });
+
+    mentorItem.innerHTML = `<p class="free">Free</p>
+                            <img class="mentor_img" src="${img}">
+                            <div class="mentor_name">
+                                <h3>${name}</h3>
+                                <h4>${designation}</h4>
+                            </div>
+                            <div class="black_gradient"></div>`;
+
+    mentorOptions.appendChild(mentorItem);
+    
 }
 
 function fetchData(){
@@ -55,10 +71,4 @@ function fetchData(){
     })
 }
 
-function info(element){
-    const elementId = element.getAttribute("id");
-    localStorage.setItem("currentMentorId", elementId);
-    console.log(localStorage.getItem("currentMentorId"));
-}
 
-window.onload(fetchData());
