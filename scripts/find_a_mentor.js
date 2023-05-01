@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
-import { getDatabase, ref, set, onValue  } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
 import { getStorage, uploadBytes, ref as imageRef, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 const firebaseConfig = {
@@ -22,10 +22,10 @@ const auth = getAuth(app);
 
 var mentorNo = 0;
 
-function addItemsToPage(img, name, designation){
+function addItemsToPage(id, img, name, designation){
     var mentorOptions = document.querySelector(".mentor_options");
 
-    let mentorItem = `<div class="mentor_select">
+    let mentorItem = `<div class="mentor_select" id="${id}" onclick="info(this)">
                         <p class="free">Free</p>
                         <img class="mentor_img" src="${img}">
                         <div class="mentor_name">
@@ -44,14 +44,21 @@ function fetchData(){
 
     onValue(dbRef, (snapshot) => {
         snapshot.forEach((childSnapshot) => {
+                let id = childSnapshot.key;
                 let img = childSnapshot.val().img;
                 let name = childSnapshot.val().name;
                 let designation = childSnapshot.val().designation;
 
-                addItemsToPage(img, name, designation)
+                addItemsToPage(id, img, name, designation)
             }
         )
     })
+}
+
+function info(element){
+    const elementId = element.getAttribute("id");
+    localStorage.setItem("currentMentorId", elementId);
+    console.log(localStorage.getItem("currentMentorId"));
 }
 
 window.onload(fetchData());
