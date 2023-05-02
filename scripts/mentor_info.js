@@ -54,13 +54,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 document.addEventListener("DOMContentLoaded", function(event) {
-    fetchData();
+    fetchMainData();
+    fetchAdditionalData();
 });
 
 const clickedId = sessionStorage.getItem("clickedMentorId");
 console.log(clickedId);
 
-function fetchData(){
+function fetchMainData(){
     const db = getDatabase();
     const dbRef = ref(db, 'Mentors/' + clickedId);
 
@@ -73,6 +74,24 @@ function fetchData(){
             addItemsToPage(id, img, name, designation)
         }
     )
+}
+
+function fetchAdditionalData(){
+  const db = getDatabase();
+  const dbRef = ref(db, 'Users/' + clickedId + '/Basic-Data');
+
+  onValue(dbRef, (snapshot) => {
+          let bio = snapshot.val().bio;
+          let country = snapshot.val().country;
+          let experience = snapshot.val().experience;
+
+          const mentorBio = document.querySelector(".mentor_bio");
+          const mentorExperience = document.querySelector(".mentor_experience");
+
+          mentorBio.innerHTML = bio;
+          mentorExperience.innerHTML = experience;
+      }
+  )
 }
 
 function addItemsToPage(id, img, name, designation){
