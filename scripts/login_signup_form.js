@@ -23,6 +23,9 @@ const storage = getStorage(app);
 
 const auth = getAuth(app);
 
+const database = firebase.database();
+
+
 // const storageRef = ref(storage, 'images');
 
 setPersistence(auth, browserSessionPersistence)
@@ -297,4 +300,24 @@ function mentorProfilePic(currentUser, mentorData){
   }
 
 
+}
+
+
+// Fetch Data
+function fetchData(){
+  const usersRef = database.ref('users');
+
+  // Listen for changes to the data
+  usersRef.on('value', (snapshot) => {
+    const users = snapshot.val();
+    // clear any previous data displayed
+    document.getElementById('user-list').innerHTML = '';
+    // loop through the users and display them
+    for (let userId in users) {
+      const userData = users[userId];
+      const userElement = document.createElement('div');
+      userElement.innerHTML = `<p>${userData.name}, ${userData.email}</p>`;
+      document.getElementById('user-list').appendChild(userElement);
+    }
+  });
 }
