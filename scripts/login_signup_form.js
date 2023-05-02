@@ -1,9 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
-import { getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-import { getStorage, uploadBytes, ref as imageRef} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
-
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, setPersistence, browserSessionPersistence} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js"
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+import { getStorage, uploadBytes, ref as imageRef, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-storage.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAxmU8ngD4BQwLOrGz8v3YOfD82vmP2BfY",
@@ -29,6 +28,13 @@ const database = firebase.database();
 
 // const storageRef = ref(storage, 'images');
 
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    console.log("Auth state persistence enabled.");
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
 
 
 var currentUser = {};
@@ -51,6 +57,7 @@ function createNewUser(email, password){
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         const user = userCredential.user;
+        localStorage.setItem("userToken", user.getIdToken());
         document.getElementsByClassName("error").style.display = "none";
     })
     .catch((error) => {
@@ -131,7 +138,7 @@ const mentorForm = document.querySelector(".mentor_form");
 
       $("#register-mentor-data").click(function() {
         addDataToMentor(userBasicData);
-        mentorProfilePic(userBasicData);
+        
       })
     };
     
@@ -152,6 +159,7 @@ const mentorForm = document.querySelector(".mentor_form");
     console.log("Your Data have been added Successfully");
   }
 
+
   function addDataToMentor(currentUser){
     const db = getDatabase();
     set(ref(db, 'Users/'+ currentUser.id + '/Mentor-data/Mentorship_sessions_attended' ), {data : "null"});
@@ -162,11 +170,14 @@ const mentorForm = document.querySelector(".mentor_form");
       // id: currentUser.id,
       name : $("#name").val(),
       designation : $("#designation").val(),
-      img: "image-link",
       status: $("#status").val(),
     }
 
-    set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
+    mentorProfilePic(currentUser, mentorData);
+
+    //mentor data uploading is moved to mentorProfilePic() > getDownloadURL() function
+    //because the url variable was not working outside the getDownloadURL()
+  
   }
 
   function addDataToMentee(currentUser){
@@ -181,7 +192,7 @@ const mentorForm = document.querySelector(".mentor_form");
 
 // ----------------profile pic upload-------------------
 
-function mentorProfilePic(currentUser){
+function mentorProfilePic(currentUser, mentorData){
   document.getElementById('register-mentor-data').innerHTML = "Please wait...";
   document.getElementById('register-mentor-data').style.opacity = "0.75";
   
@@ -254,11 +265,19 @@ function mentorProfilePic(currentUser){
     // Upload the compressed image to Firebase Storage
     const storageRef = imageRef(storage, "Mentor_profile_pic/" + currentUser.name + "/profile.jpeg");
     uploadBytes(storageRef, compressedImageBlob).then(snapshot => {
-      // console.log('File available at', snapshot.ref.getDownloadURL());
+
+        getDownloadURL(storageRef).then((url) => {
+            mentorData.img = url;
+            const db = getDatabase();
+            set(ref(db, 'Mentors/'+ currentUser.id), mentorData);
+        }).catch((error) => {
+          console.log(error.message);
+        });
+
         //to find a mentor page
         setTimeout(() => {
           window.location.href = "../Pages/find_a_mentor.html";
-        }, 500); 
+        }, 5000); 
     }).catch(error => {
       console.error(error);
     });
@@ -279,6 +298,8 @@ function mentorProfilePic(currentUser){
     }
     return new Blob([uInt8Array], {type: contentType});
   }
+
+
 }
 
 

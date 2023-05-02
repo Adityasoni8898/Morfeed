@@ -80,26 +80,32 @@ button:active{
     border: 2px solid teal;
 }
 
-.cofounder_detail{
+.mentor_detail{
     display: flex;
     position: relative;
     margin-top: 125px;
 }
 
-.cofounder_detail > div{
+.mentor_image{
+    max-height: 275px;
+    max-width: 275px;
+    border-radius: 20px;
+}
+
+.mentor_detail > div{
     margin: 0 25px;
 }
 
-.cofounder_detail_name{
+.mentor_detail_name{
     display: flex;
     flex-direction: row;
 }
 
-.cofounder_detail_name h1{
+.mentor_detail_name h1{
     font-size: 52px;
 }
 
-.cofounder_at h3{
+.mentor_at h3{
     font-size: 24px;
     font-weight: 500;
 }
