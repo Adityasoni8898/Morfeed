@@ -81,7 +81,7 @@ close.addEventListener("click",()=>{
 function generateZoomLink() {
   const apiKey = 'BLV7euzdQ6uAmZc9hYsq-w';         
   const apiSecret = 'ahkOuYq0XHF3J4VvgSo6CnHer2YHyDpuh8Bx';   
-  const jwToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IkJMVjdldXpkUTZ1QW1aYzloWXNxLXciLCJleHAiOjE2ODEzMTc0NTAsImlhdCI6MTY4MTIzMTA1MX0.aq-HdX-OQwyFKCNV28ipWsUDAbx8VzWBvj3Qek47jPA';   
+  const jwToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IkJMVjdldXpkUTZ1QW1aYzloWXNxLXciLCJleHAiOjE2ODE0ODkyODYsImlhdCI6MTY4MTQwMjg4Nn0.eJvcutNzOjE-cGXsCkc3o8O32sJEUxU5Vw-4Ib-urwE';   
   const meeting = {           
     topic: 'New Zoom Meeting',
     type: '2',           
