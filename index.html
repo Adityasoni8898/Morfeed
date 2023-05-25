@@ -5,11 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=<style>, initial-scale=1.0">
     <title>Morfeed</title>
+    <script defer src="scripts/main.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     
 </head>
-
-<script src="scripts/main.js"></script>
 
 <body>
     <div class="flex-container">
@@ -52,14 +51,14 @@
         <div class="text_img_intro">
             <div class="intro_text">
                 <div class="search_selector">
-                    <a href="#"><button>Mentee</button></a>
-                    <a href="#"><button autofocus>Mentor</button></a>
+                    <button class="switch">Mentee</button>
+                    <button class="switch pressed" autofocus>Mentor</button>
                 </div>
                 <h1 class="intro_title">A place where<br>'Right Guidance' is valued.</h1>
                 <p>We at Morfeed will provide right guidance from the right people you need to get ahead in your career. <br>We value your time over everything and love to grow with you.</p>
                 <div class="search_role">
                     <img src="assets/svg/Search_img.svg" alt="search_img">
-                    <p>Search by Role or Company</p>
+                    <input type="text" class="search_by_role" placeholder="Search by Role or Company">
                     <button>Search</button>
                 </div>
             </div>
@@ -69,7 +68,16 @@
         </div>
         <div class="mentors_from">
             <h2>Our mentors are coming from</h2>
-            <img src="assets/svg/sample_logo_rectangle.svg" alt="logo">
+            <div class="brand_logo">
+                <img src="assets/pngs/apple_logo.png" alt="apple_logo">
+                <img src="assets/pngs/flipkart_logo.png" alt="apple_logo">
+                <img src="assets/pngs/meta_logo.png" alt="apple_logo">
+                <img src="assets/pngs/microsoft_logo.png" alt="apple_logo height=30px width=140px">
+                <img src="assets/pngs/nokia_logo.png" alt="apple_logo">
+                <img src="assets/pngs/ola_logo.png" alt="apple_logo">
+                <img src="assets/pngs/oracle_logo.png" alt="apple_logo">
+                <img src="assets/pngs/Swiggy_logo.png" alt="apple_logo">
+            </div>
         </div>
     </div>
 
@@ -122,28 +130,69 @@
             <button>Al/Ml</button>
         </div>
 
-        <div class="mentor_images">
-            <div>
-                <img src="assets/mentor_images/1.png" alt="mentor_1">
+
+        <div class="mentor_display">
+            <div class="each_mentor">
+                <div class="mentor_img">
+                    <img src="assets/mentor_images/1.png" alt="">
+                    <div class="gradient"></div>
+                    <div class="mentor_name">
+                        <h2>James Freedman</h2>
+                        <p>Freelance Web Designer</p>
+                    </div>
+                </div>
+                
             </div>
-            <div>
-                <img src="assets/mentor_images/Rectangle 54.png" alt="mentor_2">
+            <div class="each_mentor">
+                <div class="mentor_img">
+                    <img src="assets/mentor_images/Rectangle 54.png" alt="">
+                    <div class="gradient">
+                    </div>
+                    <div class="mentor_name">
+                    
+                        <h2>Julia R.</h2>
+                        <p>Fashion Designer @H&M</p>
+                    </div>
+                </div>
+                
+                
             </div>
-            <div>
-                <img src="assets/mentor_images/Rectangle 55.png" alt="mentor_3">
+
+            <div class="each_mentor">
+                <div class="mentor_img">
+                    <img src="assets/mentor_images/Rectangle 55.png" alt="">
+                    <div class="gradient">
+                    </div>
+                    <div class="mentor_name">
+                        <h2>Rebecca Diaz</h2>
+                        <p>Product Designer @Amazon</p>
+                    </div>
+                </div>
+                
+                
             </div>
-            <div>
-                <img src="assets/mentor_images/Rectangle 56.png" alt="mentor_4">
+            <div class="each_mentor">
+                <div class="mentor_img">
+                    <img src="assets/mentor_images/Rectangle 56.png" alt="">
+                    <div class="gradient">
+                    </div>
+                    <div class="mentor_name">
+                        <h2>Moritz H.</h2>
+                        <p>CEO at Drivethru</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
+
 
         <button class="black_btn">Explore all</button>
 
         <h2 class="how_it_works">How it works?</h2>
-        <div class="mentorship_to_feedback">
+        <!-- <div class="mentorship_to_feedback">
             <button>Mentorship</button>
             <button>Feedback</button>
-        </div>
+        </div> -->
         <div class="how_to_path">
             <div class="find_a_mentor path_box">
                 <div>
@@ -302,5 +351,3 @@
 
 </body>
 </html>
-<!-- Aditya -->
-<!-- muzammil -->
