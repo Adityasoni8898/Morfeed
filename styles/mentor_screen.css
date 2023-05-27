@@ -46,38 +46,75 @@ button:active{
     color: teal;
 }
 
-.flex_container{
-    margin-top: 30px;
-    display: flex;
+.nav_bar{
+    padding: 0 8%;
+    animation-name: slideInTop;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0.1s;
+    animation-iteration-count: 1;
+    margin: 30px 0px;
     justify-content: space-between;
-}
-
-.title{
-    font-size: 32px;
-    font-weight: 750;
-    align-self: center;
-}
-
-.flex_row{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 600;
 }
 
-.flex_row > li{
-    margin: 0px 16px;
+.nav_logo{
+    font-size: 32px;
+    font-weight: 750;
+    display: flex;
+    justify-content: left;
+    align-self: left;
 }
 
-.signup_btn{
+.black_btn{
     color: white;
     background-color: black;
 }
 
+.nav_link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 31px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav_btn{
+    display: flex;
+    justify-content: right;
+    gap: 14px;
+}
+
+.login_signup_btn{
+    border: 2px solid black;
+    padding: 8px 18px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.login_signup_btn:hover{
+cursor: Pointer;
+background-color: black;
+color: white;
+}
+
+.login_signup_btn:active{
+color: teal;
+}
+
+.signup_btn{
+color: white;
+background-color: black;
+}
+
 .signup_btn:hover{
-    background-color: teal;
-    border: 2px solid teal;
+background-color: teal;
+border: 2px solid teal;
 }
 
 .cofounder_detail{
