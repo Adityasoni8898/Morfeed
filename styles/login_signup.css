@@ -59,6 +59,7 @@ body{
   padding: 5px;
   width: 100%;
   background-color: transparent;
+  display: flex;
   border-radius: 5px;
   border-width: 1px;
   border-style: solid;
@@ -106,6 +107,7 @@ body{
   margin-top: 2px;
   width: 100%;
   font-size: 20px;
+  text-decoration: none;
 }
 
 .form button{
@@ -118,6 +120,7 @@ body{
   border-radius: 6px;
   width: 100%;
   font-size: 20px;
+  
 }
 
 .google_auth {
@@ -379,4 +382,76 @@ body{
   font-size: 12px;
   margin-top: 0;
   display: none;
+}
+
+@media only screen and (max-width: 786px) {
+  .about_morfeed{
+    display: none;
+  }
+
+  .login_singup {
+    width: 100%;
+  }
+
+  .google_auth{
+    width: 100%;
+  }
+
+  .login_welcome h1{
+    font-size: 32px;
+  }
+
+  .login_welcome h2{
+    font-size: 28px;
+  }
+
+  .login_signup_toggle{
+    margin-top: 20px;
+  }
+
+  .login_signup_toggle_btn {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .form p {
+    margin-top: 18px;
+    font-size: 12px;
+  }
+
+  .form input {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .form button{
+    font-size: 14px;
+  }
+
+
+  /* pop up */
+
+  .popup_container {
+    width: 350px;
+    height: 234px;
+  }
+
+  .mentorPro {
+    width: 175px;
+    height: 210px;
+  }
+
+
+  .menteePro {
+    width: 175px;
+    height: 210px;
+  }
+
+  .mentor_img {
+    width: 45%;
+    height: auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 20px;
+  }
 }
