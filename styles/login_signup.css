@@ -173,28 +173,25 @@ body{
   z-index: 3;
 }
 .popup_container {
-  width: 500px;
-  height: 330px;
+  width: 100%;
+  height: auto;
+  padding: 10px 15px;
   background-color: white;
-  position: relative;
   display: flex;
+  gap:10px; 
+  justify-content: space-around;
   flex-direction: row;
+  align-items: center;
   border: 1px solid black;
   border-radius: 10px;
 }
 .mentorPro {
-  width: 250px;
-  height: 300px;
-  position: absolute;
-  left: 3%;
-  top: 5%;
+  width: 48%;
+  height: auto;
 }
 .mentor_img {
-  width: 215px;
-  height: 250px;
-  position: absolute;
-  top: 0%;
-  left: 5%;
+  width: 100%;
+  height: auto;
   border: 1px solid black;
   border-radius: 5px;
   padding-top: 50px;
@@ -206,28 +203,20 @@ body{
   color: white;
   font-size: 22px;
   font-weight: 600;
-  width: 215px;
-  height: 70px;
-  position: absolute;
-  bottom: 0;
-  left: 5%;
+  width: 100%;
+  height: auto;
   text-align: left;
-  padding-left: 15px;
+  padding: 10px;
   border-radius: 0 0 10px 10px;
   cursor: pointer;
 }
 .menteePro {
-  width: 250px;
-  height: 300px;
-  position: absolute;
-  right: 0;
-  top: 5%;
+  width: 48%;
+  height: auto;
 }
 .mentee_img {
-  width: 215px;
-  height: 250px;
-  position: absolute;
-  top: 0;
+  width: 100%;
+  height: auto;
   border: 1px solid black;
   border-radius: 5px;
   padding-top: 50px;
@@ -239,12 +228,10 @@ body{
   color: white;
   font-size: 22px;
   font-weight: 600;
-  width: 215px;
-  height: 70px;
-  position: absolute;
-  bottom: 0;
+  width: 100%;
+  height: auto;
   text-align: left;
-  padding-left: 15px;
+  padding: 10px;
   border-radius: 0 0 10px 10px;
   cursor: pointer;
 }
@@ -271,7 +258,6 @@ body{
 .registration_form .heading, .mentor_form .heading{
     color: #fff;
     font-weight: 700;
-    font-family: 'Satoshi';
     font-size: 32px;
     text-align: center;
     line-height: 43px;
@@ -430,28 +416,66 @@ body{
 
 
   /* pop up */
-
-  .popup_container {
-    width: 350px;
-    height: 234px;
-  }
-
-  .mentorPro {
-    width: 175px;
-    height: 210px;
-  }
-
-
-  .menteePro {
-    width: 175px;
-    height: 210px;
-  }
-
-  .mentor_img {
-    width: 45%;
+  .mentorPro{
+    width: 160px;
     height: auto;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding-top: 20px;
   }
+
+  .menteePro{
+    width: 160px;
+    height: auto;
+  }
+
+  .mentee_img img{
+    width: 150px;
+    height: auto;
+  }
+
+  .mentor_img img{
+    width: 150px;
+    height: auto;
+  }
+
+  /* registeration form */
+  .registration_form{
+    max-width: 440px;
+    height: fit-content;
+    width: 90%;
+  }
+
+  .registration_form .heading, .mentor_form .heading {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin: 6px 0px;
+  }
+
+  .registration_form label, .mentor_form label {
+    color: #fff;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+
+  .registration_form input, .mentor_form input {
+    font-size: 14px;
+  } 
+
+  .register-btn, .register-mentor-data {
+    font-size: 16px;
+    margin: 10px 0px;
+  }
+
+
+  /* mentor_form */
+  .mentor_form{
+    width: 90%;
+    max-width: 440px;
+  }
+
+
 }

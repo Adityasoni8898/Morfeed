@@ -23,7 +23,7 @@ signupToggle.addEventListener('click', () => {
 document.getElementById("popup_cards").style.display = "none";
 
 function openForm() {
-  document.getElementById("popup_cards").style.display = "block";
+  document.getElementById("popup_cards").style.display = "flex";
   document.querySelector(".overlay").style.display = "block";
 }
 
