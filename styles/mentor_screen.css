@@ -634,3 +634,28 @@ border: 2px solid teal;
   border-radius: 50%;
   font-weight: 900;
 }
+
+@media only screen and (max-width: 768px){
+    .nav_bar {
+        margin: 20px 0;
+    }
+
+    .nav_logo {
+        font-size: 22px;
+    }
+
+    .nav_link{
+        display: none;
+    }
+
+    .nav_btn{
+        gap: 8px;
+    }
+
+    .login_signup_btn {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

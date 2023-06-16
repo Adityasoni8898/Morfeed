@@ -26,7 +26,7 @@
 }
 
 body>div {
-    margin: 0px 140px;
+    margin: 0px 8%;
 }
 
 .black_btn{
@@ -264,4 +264,48 @@ border: 2px solid teal;
 .load_btn{
     align-self: center;
     margin: 30px auto;
+}
+
+@media only screen and (max-width: 768px){
+
+    body>div {
+        margin: 0px 10px;
+    }
+
+    .nav_bar {
+        margin: 20px 0;
+    }
+
+    .nav_logo {
+        font-size: 22px;
+    }
+
+    .nav_link{
+        display: none;
+    }
+
+    .nav_btn{
+        gap: 8px;
+    }
+
+    .login_signup_btn {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .mentor_search{
+        display: none;
+    }
+
+    .mentor_feedback_buttons button {
+        font-size: 22px;
+    }
+
+    .mentor_select{
+        width: 46%;
+        height: 280px;
+    }
+
 }
