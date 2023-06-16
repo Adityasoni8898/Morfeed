@@ -18,7 +18,7 @@
 }
 
 body>div {
-    margin: 0px 140px;
+    margin: 0px 8%;
 }
 
 .black_btn{
@@ -642,6 +642,10 @@ border: 2px solid teal;
 }
 
 @media only screen and (max-width: 768px){
+    body>div {
+        margin: 0 20px;
+    }
+    
     .nav_bar {
         margin: 20px 0;
     }
@@ -664,4 +668,20 @@ border: 2px solid teal;
         font-size: 12px;
         font-weight: 500;
     }
+
+    .mentor_detail{
+        margin-top: 40px;
+        flex-wrap: wrap;
+    }
+
+    .mentor_detail>img{
+        width: 70%;
+        height: fit-content;
+        margin-left: 20px;
+    }
+
+    .mentor_detail_name h1 {
+        font-size: 30px;
+    }
+
 }

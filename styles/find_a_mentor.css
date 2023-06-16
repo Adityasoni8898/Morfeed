@@ -272,6 +272,15 @@ border: 2px solid teal;
         margin: 0px 10px;
     }
 
+    .montor_and_feedback {
+        margin-top: 25px;
+    }
+
+    .mentor_options {
+        justify-content: space-around;
+        gap:10px;
+    }
+
     .nav_bar {
         margin: 20px 0;
     }
