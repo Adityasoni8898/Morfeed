@@ -3,7 +3,8 @@
 :root{
     --light-pink:#FFFFE3;
     --grey: #10100E;
-    --light_yellow: FFFFE3;
+    --light_yellow: #FFFFE3;
+    --light_red: #ff2626;
 }
 
 *{
@@ -148,6 +149,26 @@ button:active{
     border: 2px solid teal;
 }
 
+.hamburger{
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    height: 4px;
+    width: 30px;
+    margin: 5px auto;
+    border-radius: 2px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--grey);
+}
+
+
+/* Intro Session  */
 .intro_session{
     height: fit-content;
     margin-top: 140px;
@@ -217,6 +238,15 @@ button:active{
     font-size: 14px;
     width: 200px;
     border: none;
+}
+
+.explore_all_mentors button{
+    background-color: var(--grey);
+    color: white;
+}
+
+.explore_all_mentors button a{
+    color: white;
 }
 
 .intro_img{
@@ -691,8 +721,8 @@ button:active{
     z-index: 2;
 }
 
-
-footer{
+/* footer  */
+/* footer{
 
     background-color: var(--grey);
     padding: 30px 0px 12px 0px;
@@ -742,7 +772,73 @@ footer *{
     font-weight: 200;
     font-size: 14px;
     margin-right: 16px;
+} */
+
+
+
+
+footer{
+    margin-top: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 150px;
 }
+
+footer *{
+    color: white;
+}
+
+footer>*{
+    margin-top: 60px;
+}
+
+footer hr{
+    width: 80%;
+}
+
+.footer_text{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+}
+
+.footer_text_1{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer_text_2{
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.footer_text a{
+    font-size: 16px;
+}
+
+.footer_copyright{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.footer_copyright p{
+    margin-right: 2px;
+    font-size: 12px;
+}
+
+.copyright_content{
+    display: flex;
+    gap: 8px;
+}
+
+
 
 @media only screen and (max-width: 1301px) {
     .intro_text h1 {
@@ -760,6 +856,34 @@ footer *{
 
 
 @media only screen and (max-width: 786px) {
+
+    /* .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    } */
+
+/* 
+    .nav_item{
+        color: #fff;
+        margin: 16px 0;
+    }
+
+    .nav_link.active{
+        left: 0;
+    }
+     */
+
     .nav_bar {
         margin: 20px 0;
     }
@@ -768,12 +892,19 @@ footer *{
         font-size: 22px;
     }
 
-    .nav_link {
+    .nav_link{
         display: none;
     }
 
-    .nav_btn {
-        display: none;
+    .nav_btn{
+        gap: 8px;
+    }
+
+    .login_signup_btn {
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 500;
     }
     
     .intro_session{
@@ -781,7 +912,7 @@ footer *{
     }
 
     .intro_text div {
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
     .intro_text div button {
@@ -800,6 +931,11 @@ footer *{
 
     .search_by_role {
         font-size: 12px;
+    }
+
+    .explore_all_mentors a{
+        align-self: center;
+        font-size: 14px;
     }
 
     .intro_img {
@@ -843,7 +979,7 @@ footer *{
     }
 
     .expertise{
-        margin: 10px 20px;
+        margin: 10px 2px;
     }
 
     .expertise div {
@@ -885,9 +1021,34 @@ footer *{
         margin: 2px;
     }
 
-    .mentor_img{
-        display: none;
+    .mentor_display{
+        flex-wrap: wrap;
+        gap: 15px;
     }
+
+    .each_mentor{
+        width: 46.5%;
+    }
+
+    .mentor_img img{
+        width: 100%;
+    }
+
+    .mentor_name h2{
+        font-size: 16px;
+    }
+
+    .mentor_name p{
+        font-size: 10px;
+    }
+
+
+
+    .gradient{
+        width: 100%;
+        height: 50%;
+    }
+
 
     .black_btn {
         margin-top: 10px;
@@ -900,18 +1061,18 @@ footer *{
     }
 
     .how_to_path{
-        padding: 0 20px 0 20px;
+        padding: 0 10px;
         margin-top: 10px;
     }
 
     .path_box{
-        margin: 0 2px 6px 2px;
-        padding: 5px;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 20px;
         font-size: 12px;
     }
 
     .path_box div img {
-        margin-right: 4px;
         height: 28px;
         width: 28px;
     }
@@ -1004,6 +1165,7 @@ footer *{
     }
 
     .impact_of_mentor_text2 {
+        margin-top: 20px;
         font-size: 12px;
     }
 
@@ -1074,4 +1236,68 @@ footer *{
     .img8{
         display: none;
     }
+
+
+
+
+    /* footer  */
+    footer{
+        margin-top: 20px;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    footer>img{
+        width: 100px;
+    }
+    
+    footer>*{
+        margin-top: 15px;
+    }
+    
+    footer hr{
+        width: 80%;
+    }
+    
+    .footer_text{
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+        align-items: center;
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+    
+    .footer_text_1{
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer_text_2{
+        gap:40px;
+    }
+    
+    .footer_text a{
+        font-size: 12px;
+    }
+    
+    .footer_copyright{
+        gap: 35px;
+    }
+    
+    .footer_copyright p{
+        margin-right: 2px;
+        font-size: 10px;
+    }
+    
+    .copyright_content{
+        gap: 8px;
+    }
+
 }
