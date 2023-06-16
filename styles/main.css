@@ -16,6 +16,10 @@
     color: black;
 }
 
+html{
+    overflow: x-hidden;
+}
+
 @keyframes slideInTop {
     from{
         transform:translateY(-111px)
@@ -216,14 +220,14 @@ button:active{
 }
 
 .intro_img{
-    animation-name: slideInRight;
+    /* animation-name: slideInRight;
     animation-duration: 0.5s;
     animation-timing-function: ease;
     animation-delay: 0.1s;
-    animation-iteration-count: 1;
+    animation-iteration-count: 1; */
     width: 400px;
     height: 400px;
-    transition: transform 1s;
+    /* transition: transform 1s; */
 }
 
 .mentors_from{
@@ -390,7 +394,7 @@ button:active{
     flex-wrap: wrap;
     padding: 0 80px 0 80px;
     margin-top: 30px;
-    justify-content: center;
+    justify-content: left;
 }
 
 .path_box{
@@ -537,6 +541,7 @@ button:active{
     width: 100%;
     height:550px;
     margin-top: 95px;
+    margin-bottom: 100px;
     background-color: var(--grey);
     color: white;
     padding: 50px;
@@ -749,5 +754,324 @@ footer *{
         margin-top: 12px;
         font-size: 14px;
         font-weight: 600;
+    }
+}
+
+
+
+@media only screen and (max-width: 786px) {
+    .nav_bar {
+        margin: 20px 0;
+    }
+
+    .nav_logo {
+        font-size: 22px;
+    }
+
+    .nav_link {
+        display: none;
+    }
+
+    .nav_btn {
+        display: none;
+    }
+    
+    .intro_session{
+        margin-top: 0px;
+    }
+
+    .intro_text div {
+        margin-top: 5px;
+    }
+
+    .intro_text div button {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .intro_text h1 {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    .intro_text p{
+        font-size: 12px;
+    }
+
+    .search_by_role {
+        font-size: 12px;
+    }
+
+    .intro_img {
+        display: none;
+    }
+
+    /* our mentor */
+    .mentors_from {
+        margin: 40px 0;
+    }
+
+    .mentors_from h2{
+        font-size: 20px;
+    }
+
+    .brand_logo {
+        margin-top: 20px;
+        gap: 2%;
+    }
+
+    .brand_logo img{
+        max-width: 10.5%;
+    }
+
+    /* course_options */
+    .course_options {
+        padding: 20px 0 8px 0;
+    }
+
+    .course_text {
+        margin: 0px;
+    }
+
+    .course_text h2 {
+        font-size: 20px;
+    }
+
+    .course_text p {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .expertise{
+        margin: 10px 20px;
+    }
+
+    .expertise div {
+        margin: 4px 4px;
+        padding: 5px 5px;
+    }
+
+    .expertise div img {
+        margin: 0px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .expertise div h1 {
+        margin: 0 4px;
+        font-size: 10px;
+    }
+
+    .course_text h3{
+        font-size: 16px;
+    }
+
+    /* our mentor  */
+    .ourmentors {
+        margin: 20px 0;
+    }
+
+    .ourmentors h2 {
+        font-size: 20px;
+    }
+
+    .mentor_fields {
+        margin: 12px 0 15px 0px;
+    }
+
+    .mentor_fields button {
+        font-size: 10px;
+        padding: 4px 6px;
+        margin: 2px;
+    }
+
+    .mentor_img{
+        display: none;
+    }
+
+    .black_btn {
+        margin-top: 10px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .how_it_works {
+        margin-top: 20px;
+    }
+
+    .how_to_path{
+        padding: 0 20px 0 20px;
+        margin-top: 10px;
+    }
+
+    .path_box{
+        margin: 0 2px 6px 2px;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .path_box div img {
+        margin-right: 4px;
+        height: 28px;
+        width: 28px;
+    }
+
+    .path_box div {
+        margin-bottom: 18px;
+    }
+
+    .path_box div h2 {
+        font-size: 14px;
+    }
+
+    .find_a_mentor{
+        width: 100%;
+    }
+    
+    .pick_a_slot{
+        width: 90%;
+    }
+    
+    .our_guidance_team{
+        width: 95%;
+    }
+    
+    .get_mentorship{
+        width: 100%;
+    }
+
+    /* learn from mistake  */
+
+    .learn_from_mistake {
+        padding: 10px 15% 10px 15%;
+    }
+
+    .learn_from_mistake h2{
+        font-size: 20px;
+    }
+
+    .learn_from_mistake p{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .lfm_content{
+        margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lfm_text {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        align-items: center;
+    }
+
+    .learn_from_mistake h2 {
+        font-size: 12px;
+    }
+
+    .learn_from_mistake p {
+        font-size: 8px;
+    }
+
+    .lfm_text button {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .lfm_content div img {
+        width: 100%;
+        height: auto;
+    }
+
+    .impact_of_mentor {
+        margin-top: 20px;
+    }
+
+    .impact_of_mentor h1 {
+        font-size: 20px;
+        font-weight: 800;
+    }
+
+    .impact_of_mentor h2 {
+        font-size: 14px;
+    }
+
+    .cassarol{
+        display: none;
+    }
+
+    .impact_of_mentor_text2 {
+        font-size: 12px;
+    }
+
+    /* join us  */
+
+    .join_us{
+        height: 450px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .join_us h2 {
+        margin-top: 0;
+    }
+
+    .join_us p{
+       font-size: 12px;
+    }
+
+    .img_button{
+        margin-top: 70px;
+
+    }
+    
+    .img1{
+        position: absolute;
+        left: 54px;
+        bottom: 51px;
+        width: 94px;
+    }
+    .img2{
+        position: absolute;
+        left: 51px;
+        bottom: 241px;
+        width: 60px;
+    }
+    .img3{
+        position: absolute;
+        left: 28px;
+        bottom: 179px;
+        width: 50px;
+    }
+    .img4{
+        position: absolute;
+        position: absolute;
+        left: 200px;
+        bottom: 35px;
+        width: 66px;
+    }
+    
+    .img5{
+        position: absolute;
+    left: 200px;
+    bottom: 133px;
+    width: 60px;
+    }
+    
+    .img6{
+        position: absolute;
+        right: 32px;
+        bottom: 200px;
+        width: 45px;
+    }
+    .img7{
+        display: none;
+    }
+    .img8{
+        display: none;
     }
 }
